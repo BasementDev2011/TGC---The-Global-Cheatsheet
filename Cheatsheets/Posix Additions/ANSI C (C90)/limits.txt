@@ -1,0 +1,91 @@
+//|----------------------------------------------------------------------------
+//| Runtime Invariant Values (limits.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+ARG_MAX                                                                        /* Maximum length of arguments for exec functions, in bytes. */
+CHILD_MAX                                                                      /* Maximum number of simultaneous processes per real user ID. */
+HOST_NAME_MAX                                                                  /* Maximum length of a host name. */
+LOGIN_NAME_MAX                                                                 /* Maximum length of a login name. */
+NGROUPS_MAX                                                                    /* Maximum number of simultaneous supplementary group IDs. */
+OPEN_MAX                                                                       /* Maximum number of open files per process. */
+PAGESIZE                                                                       /* Size of a memory page, in bytes. */
+PAGE_SIZE                                                                      /* Equivalent to PAGESIZE. */
+PTHREAD_DESTRUCTOR_ITERATIONS                                                  /* Maximum number of thread-specific data destructor iterations. */
+PTHREAD_KEYS_MAX                                                               /* Maximum number of thread-specific data keys per process. */
+PTHREAD_STACK_MIN                                                              /* Minimum size of thread stack storage, in bytes. */
+PTHREAD_THREADS_MAX                                                            /* Maximum number of threads per process. */
+RTSIG_MAX                                                                      /* Maximum number of realtime signals. */
+SEM_NSEMS_MAX                                                                  /* Maximum number of semaphores a process may have open. */
+SEM_VALUE_MAX                                                                  /* Maximum semaphore value. */
+SSIZE_MAX                                                                      /* Maximum value of an ssize_t. */
+STREAM_MAX                                                                     /* Maximum number of open stdio streams per process. */
+SYMLOOP_MAX                                                                    /* Maximum number of symbolic links resolved in path resolution. */
+TZNAME_MAX                                                                     /* Maximum number of bytes in a timezone name. */
+DELAYTIMER_MAX                                                                 /* Maximum number of timer expiration overruns. */
+IOV_MAX                                                                        /* Maximum number of iovec structures for readv/writev. */
+LINE_MAX                                                                       /* Maximum length of a utility's input line, in bytes. */
+AIO_LISTIO_MAX                                                                 /* Maximum number of I/O operations in a single list I/O call. */
+AIO_MAX                                                                        /* Maximum number of outstanding asynchronous I/O operations. */
+AIO_PRIO_DELTA_MAX                                                             /* Maximum amount by which a process can decrease its async I/O priority. */
+MQ_OPEN_MAX                                                                    /* Maximum number of open message queue descriptors per process. */
+MQ_PRIO_MAX                                                                    /* Maximum priority level for a message. */
+SIGQUEUE_MAX                                                                   /* Maximum number of queued signals a process may send and have pending. */
+TIMER_MAX                                                                      /* Maximum number of per-process timers. */
+TTY_NAME_MAX                                                                   /* Maximum length of a terminal device pathname. */
+LONG_BIT                                                                       /* Number of bits in a long int. [XSI] */
+WORD_BIT                                                                       /* Number of bits in an int. [XSI] */
+NZERO                                                                          /* Default process priority. [XSI] */
+CHARCLASS_NAME_MAX                                                             /* Maximum size of a character class name. [XSI] */
+COLL_WEIGHTS_MAX                                                               /* Maximum number of weights assignable to an LC_COLLATE entry. [XSI] */
+
+
+//|----------------------------------------------------------------------------
+//| Pathname Variable Values (limits.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+LINK_MAX                                                                       /* Maximum number of links to a single file. */
+MAX_CANON                                                                      /* Maximum bytes in a terminal canonical input line. */
+MAX_INPUT                                                                      /* Maximum bytes allowed in a terminal input queue. */
+NAME_MAX                                                                       /* Maximum bytes in a filename, excluding the terminating null. */
+PATH_MAX                                                                       /* Maximum bytes in a pathname, including the terminating null. */
+PIPE_BUF                                                                       /* Maximum bytes atomically writable to a pipe. */
+SYMLINK_MAX                                                                    /* Maximum bytes in a symbolic link's contents. */
+
+
+//|----------------------------------------------------------------------------
+//| POSIX Minimum Guaranteed Values (limits.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+_POSIX_ARG_MAX                                                                 /* Minimum guaranteed value for ARG_MAX. */
+_POSIX_CHILD_MAX                                                               /* Minimum guaranteed value for CHILD_MAX. */
+_POSIX_LINK_MAX                                                                /* Minimum guaranteed value for LINK_MAX. */
+_POSIX_MAX_CANON                                                               /* Minimum guaranteed value for MAX_CANON. */
+_POSIX_MAX_INPUT                                                               /* Minimum guaranteed value for MAX_INPUT. */
+_POSIX_NAME_MAX                                                                /* Minimum guaranteed value for NAME_MAX. */
+_POSIX_NGROUPS_MAX                                                             /* Minimum guaranteed value for NGROUPS_MAX. */
+_POSIX_OPEN_MAX                                                                /* Minimum guaranteed value for OPEN_MAX. */
+_POSIX_PATH_MAX                                                                /* Minimum guaranteed value for PATH_MAX. */
+_POSIX_PIPE_BUF                                                                /* Minimum guaranteed value for PIPE_BUF. */
+_POSIX_SSIZE_MAX                                                               /* Minimum guaranteed value for SSIZE_MAX. */
+_POSIX_STREAM_MAX                                                              /* Minimum guaranteed value for STREAM_MAX. */
+_POSIX_TZNAME_MAX                                                              /* Minimum guaranteed value for TZNAME_MAX. */
+_POSIX_SYMLINK_MAX                                                             /* Minimum guaranteed value for SYMLINK_MAX. */
+_POSIX_SYMLOOP_MAX                                                             /* Minimum guaranteed value for SYMLOOP_MAX. */
+_POSIX_HOST_NAME_MAX                                                           /* Minimum guaranteed value for HOST_NAME_MAX. */
+_POSIX_LOGIN_NAME_MAX                                                          /* Minimum guaranteed value for LOGIN_NAME_MAX. */
+_POSIX_RE_DUP_MAX                                                              /* Minimum guaranteed value for RE_DUP_MAX. */
+_POSIX_CLOCKRES_MIN                                                            /* Minimum guaranteed value for a clock resolution, in nanoseconds. */
+
+
+//|----------------------------------------------------------------------------
+//| Miscellaneous (limits.h) [POSIX/XSI]
+//|----------------------------------------------------------------------------
+
+_POSIX_VDISABLE                                                                /* Value used to disable a terminal special character. */
+RE_DUP_MAX                                                                     /* Maximum number of repeated occurrences of a regular expression permitted. */
+NL_ARGMAX                                                                      /* Maximum number of arguments to exec functions for message catalogs. [XSI] */
+NL_LANGMAX                                                                     /* Maximum bytes in a LANG environment variable name. [XSI] */
+NL_MSGMAX                                                                      /* Maximum message number for message catalogs. [XSI] */
+NL_NMAX                                                                        /* Maximum bytes in an N-to-1 mapping message. [XSI] */
+NL_SETMAX                                                                      /* Maximum set number for message catalogs. [XSI] */
+NL_TEXTMAX                                                                     /* Maximum bytes in a message string. [XSI] */

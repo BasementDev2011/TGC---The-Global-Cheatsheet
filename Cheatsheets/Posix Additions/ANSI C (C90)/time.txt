@@ -1,0 +1,95 @@
+//|----------------------------------------------------------------------------
+//| Clocks (time.h) [POSIX.1-2001]
+//|----------------------------------------------------------------------------
+
+int           clock_getres  (clockid_t clock_id, struct timespec *res);          /* Retrieves the resolution of a clock. */
+int           clock_gettime (clockid_t clock_id, struct timespec *tp);           /* Retrieves the current time of a clock. */
+int           clock_settime (clockid_t clock_id, const struct timespec *tp);     /* Sets the current time of a clock. */
+int           clock_nanosleep (clockid_t clock_id, int flags, const struct timespec *rqtp, struct timespec *rmtp); /* Suspends execution relative to a clock. */
+int           nanosleep     (const struct timespec *rqtp, struct timespec *rmtp); /* Suspends execution for a nanosecond interval. */
+
+
+//|----------------------------------------------------------------------------
+//| Per-Process Timers (time.h) [POSIX.1-2001]
+//|----------------------------------------------------------------------------
+
+int           timer_create  (clockid_t clock_id, struct sigevent *restrict evp, timer_t *restrict timerid); /* Creates a per-process timer. */
+int           timer_delete  (timer_t timerid);                                   /* Deletes a per-process timer. */
+int           timer_settime (timer_t timerid, int flags, const struct itimerspec *restrict value, struct itimerspec *restrict ovalue); /* Arms or disarms a timer. */
+int           timer_gettime (timer_t timerid, struct itimerspec *value);         /* Retrieves the remaining time on a timer. */
+int           timer_getoverrun (timer_t timerid);                                /* Returns the overrun count for a timer. */
+
+
+//|----------------------------------------------------------------------------
+//| Reentrant Time Conversion (time.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+char         *asctime_r     (const struct tm *restrict tm, char *restrict buf);  /* Reentrant version of asctime. */
+char         *ctime_r       (const time_t *timer, char *buf);                    /* Reentrant version of ctime. */
+struct tm    *gmtime_r      (const time_t *restrict timer, struct tm *restrict result); /* Reentrant version of gmtime. */
+struct tm    *localtime_r   (const time_t *restrict timer, struct tm *restrict result); /* Reentrant version of localtime. */
+
+
+//|----------------------------------------------------------------------------
+//| Locale-Aware and Parsing Functions (time.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+size_t        strftime_l    (char *restrict s, size_t maxsize, const char *restrict format, const struct tm *restrict timeptr, locale_t loc); /* Formats time for a given locale. */
+char         *strptime      (const char *restrict s, const char *restrict format, struct tm *restrict tm); /* Parses a string into a broken-down time structure. */
+
+
+//|----------------------------------------------------------------------------
+//| Timezone Management (time.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+void          tzset         (void);                                              /* Initializes timezone information from the TZ environment variable. */
+
+
+//|----------------------------------------------------------------------------
+//| Legacy Date Parsing (time.h) [XSI, LEGACY]
+//|----------------------------------------------------------------------------
+
+struct tm    *getdate       (const char *string);                                /* Converts a formatted date string to broken-down time. LEGACY: not thread-safe. */
+getdate_err                                                                    /* Error code set by getdate on failure. LEGACY. */
+
+
+//|----------------------------------------------------------------------------
+//| Structures (time.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+struct timespec                                                                /* Represents time in seconds and nanoseconds. */
+tv_sec                                                                         /* Whole seconds. Member of timespec. */
+tv_nsec                                                                        /* Nanoseconds, [0, 999999999]. Member of timespec. */
+
+struct itimerspec                                                              /* Describes a timer's interval and initial expiration. */
+it_interval                                                                    /* Timer period. Member of itimerspec. */
+it_value                                                                       /* Initial expiration. Member of itimerspec. */
+
+
+//|----------------------------------------------------------------------------
+//| Types (time.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+clockid_t                                                                      /* Type identifying a clock. */
+timer_t                                                                        /* Type identifying a per-process timer. */
+locale_t                                                                       /* Opaque type representing a locale object (used by strftime_l). */
+
+
+//|----------------------------------------------------------------------------
+//| Constants (time.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+CLOCK_REALTIME                                                                 /* System-wide real-time clock. */
+CLOCK_MONOTONIC                                                                /* Clock representing monotonic time since an unspecified starting point. */
+CLOCK_PROCESS_CPUTIME_ID                                                       /* Clock measuring CPU time consumed by the process. */
+CLOCK_THREAD_CPUTIME_ID                                                        /* Clock measuring CPU time consumed by the calling thread. */
+TIMER_ABSTIME                                                                  /* Flag for absolute time in clock_nanosleep/timer_settime. */
+
+
+//|----------------------------------------------------------------------------
+//| External Variables (time.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+tzname                                                                         /* Array of two strings: standard and daylight timezone names. */
+daylight                                                                       /* Nonzero if daylight saving time rules apply. */
+timezone                                                                       /* Difference, in seconds, between UTC and local standard time. */

@@ -1,0 +1,55 @@
+//|----------------------------------------------------------------------------
+//| Bessel Functions, First Kind (math.h) [POSIX XSI]
+//|----------------------------------------------------------------------------
+
+double        j0            (double x);                                         /* Bessel function of the first kind of order 0. */
+float         j0f           (float x);                                          /* Bessel function of the first kind of order 0, float variant. */
+long double   j0l           (long double x);                                    /* Bessel function of the first kind of order 0, long double variant. */
+double        j1            (double x);                                         /* Bessel function of the first kind of order 1. */
+float         j1f           (float x);                                          /* Bessel function of the first kind of order 1, float variant. */
+long double   j1l           (long double x);                                    /* Bessel function of the first kind of order 1, long double variant. */
+double        jn            (int n, double x);                                  /* Bessel function of the first kind of order n. */
+float         jnf           (int n, float x);                                   /* Bessel function of the first kind of order n, float variant. */
+long double   jnl           (int n, long double x);                             /* Bessel function of the first kind of order n, long double variant. */
+
+
+//|----------------------------------------------------------------------------
+//| Bessel Functions, Second Kind (math.h) [POSIX XSI]
+//|----------------------------------------------------------------------------
+
+double        y0            (double x);                                         /* Bessel function of the second kind of order 0. */
+float         y0f           (float x);                                          /* Bessel function of the second kind of order 0, float variant. */
+long double   y0l           (long double x);                                    /* Bessel function of the second kind of order 0, long double variant. */
+double        y1            (double x);                                         /* Bessel function of the second kind of order 1. */
+float         y1f           (float x);                                          /* Bessel function of the second kind of order 1, float variant. */
+long double   y1l           (long double x);                                    /* Bessel function of the second kind of order 1, long double variant. */
+double        yn            (int n, double x);                                  /* Bessel function of the second kind of order n. */
+float         ynf           (int n, float x);                                   /* Bessel function of the second kind of order n, float variant. */
+long double   ynl           (int n, long double x);                             /* Bessel function of the second kind of order n, long double variant. */
+
+
+//|----------------------------------------------------------------------------
+//| Reentrant Gamma (math.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+double        lgamma_r      (double x, int *signp);                             /* Computes the natural logarithm of the absolute value of the gamma function, stores the sign in signp. */
+float         lgammaf_r     (float x, int *signp);                              /* Computes lgamma_r for float. */
+long double   lgammal_r     (long double x, int *signp);                        /* Computes lgamma_r for long double. */
+
+
+//|----------------------------------------------------------------------------
+//| Legacy Scaling Functions (math.h) [POSIX XSI][legacy]
+//|----------------------------------------------------------------------------
+
+double        scalb         (double x, double n);                               /* Scales x by a power of the floating-point radix. Superseded by scalbn. */
+float         scalbf        (float x, float n);                                 /* Computes scalb for float. Superseded by scalbnf. */
+long double   scalbl        (long double x, long double n);                     /* Computes scalb for long double. Superseded by scalbnl. */
+
+
+//|----------------------------------------------------------------------------
+//| Legacy Significand Functions (math.h) [POSIX XSI][legacy]
+//|----------------------------------------------------------------------------
+
+double        significand   (double x);                                         /* Returns the significand of x in the range [1, 2). */
+float         significandf  (float x);                                          /* Returns the significand of x for float. */
+long double   significandl  (long double x);                                    /* Returns the significand of x for long double. */

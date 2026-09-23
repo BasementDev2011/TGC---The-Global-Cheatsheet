@@ -1,0 +1,24 @@
+//|----------------------------------------------------------------------------
+//| Macros (stddef.h)
+//|----------------------------------------------------------------------------
+
+NULL                                                                               /* Null pointer constant. */
+offsetof                                                                           /* Macro. offsetof(type, member) — yields the byte offset of member within type. */
+
+
+//|----------------------------------------------------------------------------
+//| Types (stddef.h)
+//|----------------------------------------------------------------------------
+
+size_t                                                                             /* Unsigned integer type returned by sizeof. */
+ptrdiff_t                                                                          /* Signed integer type representing the result of subtracting two pointers. */
+wchar_t                                                                            /* Integer type capable of representing distinct codes for all members of the largest extended character set among the supported locales. */
+max_align_t                                                                        /* C11+. Type whose alignment is at least as strict (large) as that of every scalar type. */
+
+
+//|----------------------------------------------------------------------------
+//| Notes (stddef.h)
+//|----------------------------------------------------------------------------
+/* C23 adds nullptr_t (the type of the nullptr keyword/constant) to this
+   header. That addition is not included here since this cheatsheet targets
+   C99/C11/C17. */

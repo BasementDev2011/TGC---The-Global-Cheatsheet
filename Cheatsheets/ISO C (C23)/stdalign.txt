@@ -1,0 +1,15 @@
+//|----------------------------------------------------------------------------
+//| Alignment Macros (stdalign.h) — C11+
+//|----------------------------------------------------------------------------
+
+alignas                                                                            /* Expands to the keyword _Alignas; specifies the alignment requirement of a declaration. */
+alignof                                                                            /* Expands to the keyword _Alignof; queries the alignment requirement of a type. */
+__alignas_is_defined                                                               /* Defined as 1, indicating the alignas convenience macro is available. */
+__alignof_is_defined                                                               /* Defined as 1, indicating the alignof convenience macro is available. */
+
+
+//|----------------------------------------------------------------------------
+//| Notes (stdalign.h)
+//|----------------------------------------------------------------------------
+/* As of C23, alignas and alignof became keywords in their own right and
+   <stdalign.h> is deprecated (kept only for backward compatibility). */

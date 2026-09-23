@@ -1,0 +1,68 @@
+//|----------------------------------------------------------------------------
+//| Copying (string.h)
+//|----------------------------------------------------------------------------
+
+void         *memcpy        (void *restrict s1, const void *restrict s2, size_t n); /* Copies n bytes from s2 to s1 (must not overlap). */
+void         *memmove       (void *s1, const void *s2, size_t n);                   /* Copies n bytes from s2 to s1, safe for overlapping regions. */
+char         *strcpy        (char *restrict s1, const char *restrict s2);           /* Copies the string s2 into s1, including the null terminator. */
+char         *strncpy       (char *restrict s1, const char *restrict s2, size_t n); /* Copies at most n characters from s2 into s1. */
+
+//|----------------------------------------------------------------------------
+//| Concatenation (string.h)
+//|----------------------------------------------------------------------------
+
+char         *strcat        (char *restrict s1, const char *restrict s2);           /* Appends a copy of s2 to the end of s1. */
+char         *strncat       (char *restrict s1, const char *restrict s2, size_t n); /* Appends at most n characters of s2 to s1. */
+
+//|----------------------------------------------------------------------------
+//| Comparison (string.h)
+//|----------------------------------------------------------------------------
+
+int           memcmp        (const void *s1, const void *s2, size_t n);             /* Compares the first n bytes of two memory blocks. */
+int           strcmp        (const char *s1, const char *s2);                       /* Compares two strings lexicographically. */
+int           strcoll       (const char *s1, const char *s2);                       /* Compares two strings using the current locale's collation. */
+int           strncmp       (const char *s1, const char *s2, size_t n);             /* Compares at most n characters of two strings. */
+size_t        strxfrm       (char *restrict s1, const char *restrict s2, size_t n); /* Transforms s2 for locale-aware comparison and stores in s1. */
+
+//|----------------------------------------------------------------------------
+//| Search (string.h)
+//|----------------------------------------------------------------------------
+
+void         *memchr        (const void *s, int c, size_t n);                       /* Locates the first occurrence of c in the first n bytes of s. */
+char         *strchr        (const char *s, int c);                                 /* Locates the first occurrence of c in s. */
+size_t        strcspn       (const char *s1, const char *s2);                       /* Returns the length of the initial segment of s1 not in s2. */
+char         *strpbrk       (const char *s1, const char *s2);                       /* Locates the first character in s1 that matches any character in s2. */
+char         *strrchr       (const char *s, int c);                                 /* Locates the last occurrence of c in s. */
+size_t        strspn        (const char *s1, const char *s2);                       /* Returns the length of the initial segment of s1 that is entirely in s2. */
+char         *strstr        (const char *s1, const char *s2);                       /* Locates the first occurrence of s2 as a substring of s1. */
+char         *strtok        (char *restrict s1, const char *restrict s2);           /* Breaks s1 into tokens delimited by characters in s2. */
+
+//|----------------------------------------------------------------------------
+//| Miscellaneous (string.h)
+//|----------------------------------------------------------------------------
+
+void         *memset        (void *s, int c, size_t n);                            /* Sets the first n bytes of s to the value c. */
+char         *strerror      (int errnum);                                          /* Returns a pointer to a locale-specific error message string. */
+size_t        strlen        (const char *s);                                       /* Returns the length of a string, excluding the null terminator. */
+
+//|----------------------------------------------------------------------------
+//| Types (string.h)
+//|----------------------------------------------------------------------------
+
+size_t                                                                              /* Unsigned integer type, result of sizeof; used for lengths/counts here. */
+
+//|----------------------------------------------------------------------------
+//| Macros (string.h)
+//|----------------------------------------------------------------------------
+
+NULL                                                                                /* Null pointer constant. */
+
+//|----------------------------------------------------------------------------
+//| Notes (string.h)
+//|----------------------------------------------------------------------------
+
+/* C11 Annex K (optional, conditionally-supported bounds-checked variants):    */
+/* memcpy_s, memmove_s, strcpy_s, strncpy_s, strcat_s, strncat_s, strtok_s,    */
+/* memset_s, strerror_s, strerrorlen_s, strnlen_s — not guaranteed present.    */
+/* bzero, bcopy, bcmp, index, rindex belong to POSIX <strings.h>, a distinct   */
+/* header, and are excluded from this <string.h> cheatsheet.                  */

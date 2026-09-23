@@ -1,0 +1,43 @@
+//|----------------------------------------------------------------------------
+//| Signal Handling (signal.h)
+//|----------------------------------------------------------------------------
+
+void        (*signal        (int sig, void (*handler)(int)))(int);               /* Sets a handler function for signal sig, returning the previous handler. */
+int           raise         (int sig);                                            /* Sends signal sig to the executing program. */
+
+
+//|----------------------------------------------------------------------------
+//| Handler Macros (signal.h)
+//|----------------------------------------------------------------------------
+
+SIG_DFL                                                                            /* Requests default handling for a signal. */
+SIG_IGN                                                                            /* Requests that a signal be ignored. */
+SIG_ERR                                                                            /* Return value of signal() indicating an error occurred. */
+
+
+//|----------------------------------------------------------------------------
+//| Signal Numbers (signal.h)
+//|----------------------------------------------------------------------------
+
+SIGABRT                                                                            /* Abnormal termination signal (e.g. from abort()). */
+SIGFPE                                                                             /* Erroneous arithmetic operation signal. */
+SIGILL                                                                             /* Illegal instruction signal. */
+SIGINT                                                                             /* Interactive attention signal (e.g. Ctrl+C). */
+SIGSEGV                                                                            /* Invalid memory access signal. */
+SIGTERM                                                                            /* Termination request signal. */
+
+
+//|----------------------------------------------------------------------------
+//| Types (signal.h)
+//|----------------------------------------------------------------------------
+
+sig_atomic_t                                                                       /* Integer type that can be accessed as an atomic entity even in the presence of asynchronous signals. */
+
+
+//|----------------------------------------------------------------------------
+//| Notes (signal.h)
+//|----------------------------------------------------------------------------
+/* The six signal numbers above are the only ones guaranteed by ISO C.
+   POSIX defines many more (SIGKILL, SIGHUP, SIGUSR1, SIGUSR2, SIGPIPE,
+   SIGALRM, SIGCHLD, etc.) along with a richer API (sigaction, sigprocmask,
+   sigemptyset, kill, etc.) that is NOT part of ISO C and is excluded here. */

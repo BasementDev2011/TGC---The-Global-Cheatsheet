@@ -1,0 +1,49 @@
+//|----------------------------------------------------------------------------
+//| Bessel Functions (math.h) [XSI]
+//|----------------------------------------------------------------------------
+
+double        j0            (double x);                                          /* Bessel function of the first kind, order 0. */
+double        j1            (double x);                                          /* Bessel function of the first kind, order 1. */
+double        jn            (int n, double x);                                   /* Bessel function of the first kind, order n. */
+double        y0            (double x);                                          /* Bessel function of the second kind, order 0. */
+double        y1            (double x);                                          /* Bessel function of the second kind, order 1. */
+double        yn            (int n, double x);                                   /* Bessel function of the second kind, order n. */
+
+
+//|----------------------------------------------------------------------------
+//| Legacy Functions (math.h) [XSI, LEGACY]
+//|----------------------------------------------------------------------------
+
+double        gamma         (double x);                                          /* Computes the log gamma function. LEGACY: superseded by lgamma. */
+double        drem          (double x, double y);                                /* Computes the IEEE remainder of x/y. LEGACY: superseded by remainder. */
+double        scalb         (double x, double n);                                /* Scales x by a power of the radix. LEGACY: superseded by scalbn/scalbln. */
+double        significand   (double x);                                          /* Returns the mantissa of x scaled to [1,2). LEGACY. */
+int           matherr       (struct exception *exc);                             /* User-definable error handler for math library exceptions. LEGACY. */
+
+
+//|----------------------------------------------------------------------------
+//| Legacy Variables, Types, and Constants (math.h) [XSI, LEGACY]
+//|----------------------------------------------------------------------------
+
+signgam                                                                        /* Sign of the gamma function result, set by gamma. LEGACY. */
+struct exception                                                                /* Structure describing a floating-point exception, used by matherr. LEGACY. */
+HUGE                                                                           /* Legacy large-value macro. LEGACY: superseded by HUGE_VAL. */
+
+
+//|----------------------------------------------------------------------------
+//| Mathematical Constants (math.h) [XSI]
+//|----------------------------------------------------------------------------
+
+M_E                                                                            /* Value of e. */
+M_LOG2E                                                                        /* Value of log2(e). */
+M_LOG10E                                                                       /* Value of log10(e). */
+M_LN2                                                                          /* Value of ln(2). */
+M_LN10                                                                         /* Value of ln(10). */
+M_PI                                                                           /* Value of pi. */
+M_PI_2                                                                         /* Value of pi/2. */
+M_PI_4                                                                         /* Value of pi/4. */
+M_1_PI                                                                         /* Value of 1/pi. */
+M_2_PI                                                                         /* Value of 2/pi. */
+M_2_SQRTPI                                                                     /* Value of 2/sqrt(pi). */
+M_SQRT2                                                                        /* Value of sqrt(2). */
+M_SQRT1_2                                                                      /* Value of 1/sqrt(2). */

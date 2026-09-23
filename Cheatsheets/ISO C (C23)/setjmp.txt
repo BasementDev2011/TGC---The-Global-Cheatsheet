@@ -1,0 +1,22 @@
+//|----------------------------------------------------------------------------
+//| Nonlocal Jumps (setjmp.h)
+//|----------------------------------------------------------------------------
+
+int           setjmp        (jmp_buf env);                                       /* Macro. Saves the calling environment into env for later use by longjmp; returns 0 on this initial call. */
+void          longjmp       (jmp_buf env, int val);                              /* Restores the environment saved by setjmp, causing setjmp to return val (or 1 if val is 0). */
+
+
+//|----------------------------------------------------------------------------
+//| Types (setjmp.h)
+//|----------------------------------------------------------------------------
+
+jmp_buf                                                                            /* Array type suitable for holding the information needed to restore a calling environment. */
+
+
+//|----------------------------------------------------------------------------
+//| Notes (setjmp.h)
+//|----------------------------------------------------------------------------
+/* Non-volatile automatic (local) variables that are modified between the
+   setjmp() call and a later longjmp() call have indeterminate values after
+   the jump. POSIX adds sigsetjmp/siglongjmp/sigjmp_buf, which also save and
+   restore the signal mask; these are NOT part of ISO C and are excluded. */

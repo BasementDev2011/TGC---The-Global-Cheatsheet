@@ -1,0 +1,100 @@
+//|----------------------------------------------------------------------------
+//| Environment Functions (stdlib.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+int           setenv        (const char *name, const char *value, int overwrite); /* Adds or changes an environment variable. */
+int           unsetenv      (const char *name);                                 /* Removes an environment variable. */
+
+
+//|----------------------------------------------------------------------------
+//| Environment Functions (stdlib.h) [POSIX XSI]
+//|----------------------------------------------------------------------------
+
+int           putenv        (char *string);                                     /* Changes or adds an environment variable from a name=value string. */
+
+
+//|----------------------------------------------------------------------------
+//| Memory Allocation (stdlib.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+int           posix_memalign (void **memptr, size_t alignment, size_t size);    /* Allocates memory aligned to a specified alignment. */
+
+
+//|----------------------------------------------------------------------------
+//| Temporary File and Directory Functions (stdlib.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+int           mkstemp       (char *template);                                   /* Creates a unique temporary file and returns its file descriptor. */
+int           mkostemp      (char *template, int flags);                        /* Creates a unique temporary file with additional open flags. */
+int           mkstemps      (char *template, int suffixlen);                    /* Creates a unique temporary file allowing a suffix in the template. */
+char         *mkdtemp       (char *template);                                   /* Creates a unique temporary directory. */
+
+
+//|----------------------------------------------------------------------------
+//| Path Resolution (stdlib.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+char         *realpath      (const char *restrict path, char *restrict resolved_path); /* Resolves a pathname to its canonical absolute form. */
+
+
+//|----------------------------------------------------------------------------
+//| Pseudo-Terminal Functions (stdlib.h) [POSIX XSI]
+//|----------------------------------------------------------------------------
+
+int           grantpt       (int fd);                                           /* Grants access to the slave pseudo-terminal device. */
+int           unlockpt      (int fd);                                           /* Unlocks the slave pseudo-terminal device. */
+char         *ptsname       (int fd);                                           /* Returns the name of the slave pseudo-terminal device. */
+
+
+//|----------------------------------------------------------------------------
+//| 48-Bit Random Number Generation (stdlib.h) [POSIX XSI]
+//|----------------------------------------------------------------------------
+
+double        drand48       (void);                                             /* Generates a pseudo-random double in [0.0, 1.0). */
+double        erand48       (unsigned short xsubi[3]);                          /* Generates a pseudo-random double using caller-supplied state. */
+long int      jrand48       (unsigned short xsubi[3]);                          /* Generates a pseudo-random signed long using caller-supplied state. */
+void          lcong48       (unsigned short param[7]);                          /* Initializes the 48-bit random number generator with a full parameter set. */
+long int      lrand48       (void);                                             /* Generates a pseudo-random non-negative long in [0, 2^31). */
+long int      mrand48       (void);                                             /* Generates a pseudo-random signed long in [-2^31, 2^31). */
+long int      nrand48       (unsigned short xsubi[3]);                          /* Generates a pseudo-random non-negative long using caller-supplied state. */
+unsigned short *seed48      (unsigned short seed16v[3]);                        /* Sets the internal state of the 48-bit generator; returns pointer to previous state. */
+void          srand48       (long int seedval);                                 /* Seeds the 48-bit random number generator. */
+
+
+//|----------------------------------------------------------------------------
+//| High-Quality Random Number Generation (stdlib.h) [POSIX XSI]
+//|----------------------------------------------------------------------------
+
+long          random        (void);                                             /* Generates a pseudo-random number using a nonlinear additive feedback algorithm. */
+void          srandom       (unsigned int seed);                                /* Seeds the random number generator used by random. */
+char         *initstate     (unsigned int seed, char *state, size_t size);      /* Initializes the random number generator state array. */
+char         *setstate      (char *state);                                      /* Switches the random number generator state array. */
+
+
+//|----------------------------------------------------------------------------
+//| Base-64 Conversion (stdlib.h) [POSIX XSI]
+//|----------------------------------------------------------------------------
+
+long          a64l          (const char *s);                                    /* Converts a radix-64 encoded string to a long integer. */
+char         *l64a          (long value);                                       /* Converts a long integer to a radix-64 encoded string. */
+
+
+//|----------------------------------------------------------------------------
+//| Suboptional Argument Parsing (stdlib.h) [POSIX XSI]
+//|----------------------------------------------------------------------------
+
+int           getsubopt     (char **optionp, char *const *tokens, char **valuep); /* Parses suboption arguments from a string. */
+
+
+//|----------------------------------------------------------------------------
+//| Legacy Reentrant Random (stdlib.h) [POSIX][obsolescent]
+//|----------------------------------------------------------------------------
+
+int           rand_r        (unsigned int *seed);                               /* Reentrant pseudo-random number generator. Superseded by rand with thread-local state. */
+
+
+//|----------------------------------------------------------------------------
+//| Legacy Temporary File Function (stdlib.h) [POSIX XSI][obsolescent]
+//|----------------------------------------------------------------------------
+
+char         *mktemp        (char *template);                                   /* Generates a unique filename from a template. Superseded by mkstemp. */

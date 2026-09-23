@@ -1,0 +1,112 @@
+//|----------------------------------------------------------------------------
+//| File Operations (stdio.h)
+//|----------------------------------------------------------------------------
+
+int           remove        (const char *filename);                              /* Deletes the file named filename. */
+int           rename        (const char *old, const char *new);                  /* Renames the file named old to new. */
+FILE         *tmpfile       (void);                                              /* Creates a temporary binary file that is automatically removed when closed. */
+char         *tmpnam        (char *s);                                           /* Generates a valid, unused file name and stores it in s (or a static buffer if s is a null pointer). */
+
+
+//|----------------------------------------------------------------------------
+//| File Access (stdio.h)
+//|----------------------------------------------------------------------------
+
+int           fclose        (FILE *stream);                                      /* Closes stream, flushing any buffered output first. */
+int           fflush        (FILE *stream);                                      /* Flushes any buffered output to stream. */
+FILE         *fopen         (const char *filename, const char *mode);            /* Opens the file named filename with the given mode, returning a stream pointer. */
+FILE         *freopen       (const char *filename, const char *mode, FILE *stream); /* Closes stream and reopens it associated with filename and mode. */
+void          setbuf        (FILE *stream, char *buf);                           /* Assigns buf as the buffer for stream, or disables buffering if buf is a null pointer. */
+int           setvbuf       (FILE *stream, char *buf, int mode, size_t size);     /* Assigns buf as the buffer for stream, specifying its buffering mode and size. */
+
+
+//|----------------------------------------------------------------------------
+//| Formatted Input/Output (stdio.h)
+//|----------------------------------------------------------------------------
+
+int           fprintf       (FILE *stream, const char *format, ...);             /* Writes formatted output to stream. */
+int           fscanf        (FILE *stream, const char *format, ...);             /* Reads formatted input from stream. */
+int           printf        (const char *format, ...);                          /* Writes formatted output to stdout. */
+int           scanf         (const char *format, ...);                          /* Reads formatted input from stdin. */
+int           sprintf       (char *s, const char *format, ...);                  /* Writes formatted output to the string s. */
+int           sscanf        (const char *s, const char *format, ...);            /* Reads formatted input from the string s. */
+int           vfprintf      (FILE *stream, const char *format, va_list arg);      /* Writes formatted output to stream using a variable argument list. */
+int           vprintf       (const char *format, va_list arg);                   /* Writes formatted output to stdout using a variable argument list. */
+int           vsprintf      (char *s, const char *format, va_list arg);          /* Writes formatted output to the string s using a variable argument list. */
+
+
+//|----------------------------------------------------------------------------
+//| Character Input/Output (stdio.h)
+//|----------------------------------------------------------------------------
+
+int           fgetc         (FILE *stream);                                      /* Reads the next character from stream. */
+char         *fgets         (char *s, int n, FILE *stream);                      /* Reads at most n-1 characters from stream into s, stopping at a newline. */
+int           fputc         (int c, FILE *stream);                               /* Writes the character c to stream. */
+int           fputs         (const char *s, FILE *stream);                       /* Writes the string s to stream. */
+int           getc          (FILE *stream);                                      /* Reads the next character from stream; may be implemented as a macro. */
+int           getchar       (void);                                              /* Reads the next character from stdin. */
+char         *gets           (char *s);                                          /* LEGACY: Reads a line from stdin into s with no bounds checking; unsafe and removed in C11 - use fgets instead. */
+int           putc          (int c, FILE *stream);                               /* Writes the character c to stream; may be implemented as a macro. */
+int           putchar       (int c);                                             /* Writes the character c to stdout. */
+int           puts          (const char *s);                                     /* Writes the string s followed by a newline to stdout. */
+int           ungetc        (int c, FILE *stream);                               /* Pushes the character c back onto stream to be read again by the next read. */
+
+
+//|----------------------------------------------------------------------------
+//| Direct Input/Output (stdio.h)
+//|----------------------------------------------------------------------------
+
+size_t        fread         (void *ptr, size_t size, size_t nmemb, FILE *stream); /* Reads nmemb objects of size bytes each from stream into ptr. */
+size_t        fwrite        (const void *ptr, size_t size, size_t nmemb, FILE *stream); /* Writes nmemb objects of size bytes each from ptr to stream. */
+
+
+//|----------------------------------------------------------------------------
+//| File Positioning (stdio.h)
+//|----------------------------------------------------------------------------
+
+int           fgetpos       (FILE *stream, fpos_t *pos);                         /* Stores the current file position of stream in pos. */
+int           fsetpos       (FILE *stream, const fpos_t *pos);                   /* Sets the file position of stream to the value stored in pos. */
+int           fseek         (FILE *stream, long int offset, int whence);         /* Sets the file position of stream according to offset and whence. */
+long int      ftell         (FILE *stream);                                      /* Returns the current file position of stream. */
+void          rewind        (FILE *stream);                                      /* Sets the file position of stream to the beginning and clears its error indicator. */
+
+
+//|----------------------------------------------------------------------------
+//| Error Handling (stdio.h)
+//|----------------------------------------------------------------------------
+
+void          clearerr      (FILE *stream);                                      /* Clears the end-of-file and error indicators for stream. */
+int           feof          (FILE *stream);                                      /* Tests the end-of-file indicator for stream. */
+int           ferror        (FILE *stream);                                      /* Tests the error indicator for stream. */
+void          perror        (const char *s);                                     /* Writes s followed by a description of the current errno value to stderr. */
+
+
+//|----------------------------------------------------------------------------
+//| Constants (stdio.h)
+//|----------------------------------------------------------------------------
+
+NULL                                                                            /* Null pointer constant. */
+EOF                                                                             /* Negative integer constant indicating end-of-file or a read/write error. */
+BUFSIZ                                                                          /* Size of the buffer used by setbuf. */
+FOPEN_MAX                                                                       /* Minimum number of files that can be open simultaneously. */
+FILENAME_MAX                                                                    /* Maximum length of an array that can hold a file name. */
+L_tmpnam                                                                        /* Maximum length of an array that can hold a name generated by tmpnam. */
+TMP_MAX                                                                         /* Minimum number of unique file names that can be generated by tmpnam. */
+_IOFBF                                                                          /* Requests fully buffered output for setvbuf. */
+_IOLBF                                                                          /* Requests line buffered output for setvbuf. */
+_IONBF                                                                          /* Requests unbuffered output for setvbuf. */
+SEEK_SET                                                                        /* Requests seeking from the beginning of the file for fseek. */
+SEEK_CUR                                                                        /* Requests seeking from the current file position for fseek. */
+SEEK_END                                                                        /* Requests seeking from the end of the file for fseek. */
+stdin                                                                           /* Stream connected to standard input. */
+stdout                                                                          /* Stream connected to standard output. */
+stderr                                                                          /* Stream connected to standard error. */
+
+
+//|----------------------------------------------------------------------------
+//| Types (stdio.h)
+//|----------------------------------------------------------------------------
+
+size_t                                                                          /* Unsigned integer type for the result of the sizeof operator. */
+FILE                                                                            /* Type suitable for recording all information needed to control a stream. */
+fpos_t                                                                          /* Type suitable for recording all information needed to specify uniquely every position within a file. */

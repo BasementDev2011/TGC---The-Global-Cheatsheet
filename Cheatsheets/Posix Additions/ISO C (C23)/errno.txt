@@ -1,0 +1,98 @@
+//|----------------------------------------------------------------------------
+//| Process and File System Error Codes (errno.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+E2BIG                                                                           /* Argument list too long. */
+EACCES                                                                          /* Permission denied. */
+EAGAIN                                                                          /* Resource unavailable, try again. */
+EBADF                                                                           /* Bad file descriptor. */
+EBUSY                                                                           /* Device or resource busy. */
+ECHILD                                                                          /* No child processes. */
+EDEADLK                                                                         /* Resource deadlock would occur. */
+EEXIST                                                                          /* File exists. */
+EFAULT                                                                          /* Bad address. */
+EFBIG                                                                           /* File too large. */
+EINTR                                                                           /* Interrupted function. */
+EINVAL                                                                          /* Invalid argument. */
+EIO                                                                             /* I/O error. */
+EISDIR                                                                          /* Is a directory. */
+ELOOP                                                                           /* Too many levels of symbolic links. */
+EMFILE                                                                          /* File descriptor value too large. */
+EMLINK                                                                          /* Too many links. */
+ENAMETOOLONG                                                                    /* Filename too long. */
+ENFILE                                                                          /* Too many files open in system. */
+ENODEV                                                                          /* No such device. */
+ENOENT                                                                          /* No such file or directory. */
+ENOEXEC                                                                         /* Executable file format error. */
+ENOLCK                                                                          /* No locks available. */
+ENOMEM                                                                          /* Not enough space. */
+ENOSPC                                                                          /* No space left on device. */
+ENOSYS                                                                          /* Functionality not supported. */
+ENOTDIR                                                                         /* Not a directory or a symbolic link to a directory. */
+ENOTEMPTY                                                                       /* Directory not empty. */
+ENOTSUP                                                                         /* Not supported. */
+ENOTTY                                                                          /* Inappropriate I/O control operation. */
+ENXIO                                                                           /* No such device or address. */
+EOVERFLOW                                                                       /* Value too large to be stored in data type. */
+EPERM                                                                           /* Operation not permitted. */
+EPIPE                                                                           /* Broken pipe. */
+EROFS                                                                           /* Read-only file system. */
+ESPIPE                                                                          /* Invalid seek. */
+ESRCH                                                                           /* No such process. */
+ESTALE                                                                          /* Stale file handle. */
+ETXTBSY                                                                         /* Text file busy. */
+EXDEV                                                                           /* Cross-device link. */
+
+
+//|----------------------------------------------------------------------------
+//| Network and Socket Error Codes (errno.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+EADDRINUSE                                                                      /* Address in use. */
+EADDRNOTAVAIL                                                                   /* Address not available. */
+EAFNOSUPPORT                                                                    /* Address family not supported. */
+EALREADY                                                                        /* Connection already in progress. */
+ECONNABORTED                                                                    /* Connection aborted. */
+ECONNREFUSED                                                                    /* Connection refused. */
+ECONNRESET                                                                      /* Connection reset. */
+EDESTADDRREQ                                                                    /* Destination address required. */
+EHOSTUNREACH                                                                    /* Host is unreachable. */
+EINPROGRESS                                                                     /* Operation in progress. */
+EISCONN                                                                         /* Socket is connected. */
+ENETDOWN                                                                        /* Network is down. */
+ENETRESET                                                                       /* Connection aborted by network. */
+ENETUNREACH                                                                     /* Network unreachable. */
+ENOBUFS                                                                         /* No buffer space available. */
+ENOPROTOOPT                                                                     /* Protocol not available. */
+ENOTCONN                                                                        /* The socket is not connected. */
+ENOTSOCK                                                                        /* Not a socket. */
+EOPNOTSUPP                                                                      /* Operation not supported on socket. */
+EPROTO                                                                          /* Protocol error. */
+EPROTONOSUPPORT                                                                 /* Protocol not supported. */
+EPROTOTYPE                                                                      /* Protocol wrong type for socket. */
+ETIMEDOUT                                                                       /* Connection timed out. */
+EWOULDBLOCK                                                                     /* Operation would block (may equal EAGAIN). */
+
+
+//|----------------------------------------------------------------------------
+//| IPC and Concurrency Error Codes (errno.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+EBADMSG                                                                         /* Bad message. */
+ECANCELED                                                                       /* Operation canceled. */
+EIDRM                                                                           /* Identifier removed. */
+EMSGSIZE                                                                        /* Message too large. */
+ENOMSG                                                                          /* No message of the desired type. */
+ENOTRECOVERABLE                                                                 /* State not recoverable. */
+EOWNERDEAD                                                                      /* Previous owner died. */
+
+
+//|----------------------------------------------------------------------------
+//| Obsolescent STREAMS Error Codes (errno.h) [POSIX XSI][obsolescent]
+//|----------------------------------------------------------------------------
+
+ENODATA                                                                         /* No message available on the STREAM head read queue. */
+ENOLINK                                                                         /* Link has been severed. */
+ENOSR                                                                           /* No STREAM resources. */
+ENOSTR                                                                          /* Not a STREAM. */
+ETIME                                                                           /* Stream ioctl() timeout. */

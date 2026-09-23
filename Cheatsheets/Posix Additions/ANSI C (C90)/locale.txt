@@ -1,0 +1,36 @@
+//|----------------------------------------------------------------------------
+//| Additional Locale Category (locale.h) [POSIX/XSI]
+//|----------------------------------------------------------------------------
+
+LC_MESSAGES                                                                    /* Locale category for affirmative/negative responses and diagnostic message formatting. Not part of ANSI C's base category set. */
+
+
+//|----------------------------------------------------------------------------
+//| Extended Locale Object Management (locale.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+locale_t      newlocale     (int category_mask, const char *locale, locale_t base); /* Creates or modifies a locale object. */
+locale_t      uselocale     (locale_t newloc);                                   /* Sets the locale for the calling thread and returns the previous one. */
+void          freelocale    (locale_t locobj);                                   /* Frees a locale object created by newlocale or duplocale. */
+locale_t      duplocale     (locale_t locobj);                                   /* Duplicates a locale object. */
+
+
+//|----------------------------------------------------------------------------
+//| Locale Category Masks (locale.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+LC_COLLATE_MASK                                                                /* Category mask for LC_COLLATE, used with newlocale. */
+LC_CTYPE_MASK                                                                  /* Category mask for LC_CTYPE, used with newlocale. */
+LC_MESSAGES_MASK                                                               /* Category mask for LC_MESSAGES, used with newlocale. */
+LC_MONETARY_MASK                                                               /* Category mask for LC_MONETARY, used with newlocale. */
+LC_NUMERIC_MASK                                                                /* Category mask for LC_NUMERIC, used with newlocale. */
+LC_TIME_MASK                                                                   /* Category mask for LC_TIME, used with newlocale. */
+LC_ALL_MASK                                                                    /* Mask combining all locale categories. */
+LC_GLOBAL_LOCALE                                                               /* Special locale_t value representing the global locale. */
+
+
+//|----------------------------------------------------------------------------
+//| Types (locale.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+locale_t                                                                       /* Opaque type representing a locale object. */

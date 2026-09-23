@@ -1,0 +1,42 @@
+//|----------------------------------------------------------------------------
+//| Locale Category (locale.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+LC_MESSAGES                                                                     /* Locale category for message strings. */
+
+
+//|----------------------------------------------------------------------------
+//| Locale Category Masks (locale.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+LC_ALL_MASK                                                                     /* Mask of all locale categories. */
+LC_COLLATE_MASK                                                                 /* Mask for the LC_COLLATE locale category. */
+LC_CTYPE_MASK                                                                   /* Mask for the LC_CTYPE locale category. */
+LC_MESSAGES_MASK                                                                /* Mask for the LC_MESSAGES locale category. */
+LC_MONETARY_MASK                                                                /* Mask for the LC_MONETARY locale category. */
+LC_NUMERIC_MASK                                                                 /* Mask for the LC_NUMERIC locale category. */
+LC_TIME_MASK                                                                    /* Mask for the LC_TIME locale category. */
+
+
+//|----------------------------------------------------------------------------
+//| Locale Constants (locale.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+LC_GLOBAL_LOCALE                                                                /* Represents the global locale used by non-locale-aware functions. */
+
+
+//|----------------------------------------------------------------------------
+//| Locale Types (locale.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+locale_t                                                                        /* Represents a locale object. */
+
+
+//|----------------------------------------------------------------------------
+//| Locale Object Functions (locale.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+locale_t      duplocale     (locale_t locale);                                  /* Creates a duplicate of a locale object. */
+void          freelocale    (locale_t locale);                                  /* Frees a locale object. */
+locale_t      newlocale     (int category_mask, const char *locale, locale_t base); /* Creates or modifies a locale object. */
+locale_t      uselocale     (locale_t locale);                                  /* Sets the locale for the calling thread, returns the previous locale. */

@@ -1,0 +1,49 @@
+//|----------------------------------------------------------------------------
+//| String Copying (string.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+char         *stpcpy        (char *restrict s1, const char *restrict s2);       /* Copies a string and returns a pointer to the terminating null byte of the destination. */
+char         *stpncpy       (char *restrict s1, const char *restrict s2, size_t n); /* Copies at most n bytes of a string and returns a pointer to the end of the destination. */
+
+
+//|----------------------------------------------------------------------------
+//| String Duplication (string.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+char         *strdup        (const char *s);                                    /* Allocates and returns a duplicate of a string. */
+char         *strndup       (const char *s, size_t n);                          /* Allocates and returns a duplicate of at most n bytes of a string. */
+
+
+//|----------------------------------------------------------------------------
+//| String Length (string.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+size_t        strnlen       (const char *s, size_t maxlen);                     /* Returns the length of a string, up to a maximum of maxlen bytes. */
+
+
+//|----------------------------------------------------------------------------
+//| String Tokenization (string.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+char         *strtok_r      (char *restrict s, const char *restrict sep, char **restrict lasts); /* Reentrant version of strtok. */
+
+
+//|----------------------------------------------------------------------------
+//| Error Description (string.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+int           strerror_r    (int errnum, char *strerrbuf, size_t buflen);       /* Stores the error message for errnum in a caller-supplied buffer. */
+
+
+//|----------------------------------------------------------------------------
+//| Signal Description (string.h) [POSIX XSI]
+//|----------------------------------------------------------------------------
+
+char         *strsignal     (int signum);                                       /* Returns a string describing the signal number. */
+
+
+//|----------------------------------------------------------------------------
+//| Memory Utility (string.h) [POSIX XSI]
+//|----------------------------------------------------------------------------
+
+void         *memccpy       (void *restrict s1, const void *restrict s2, int c, size_t n); /* Copies bytes from s2 to s1, stopping after the first occurrence of c or after n bytes. */

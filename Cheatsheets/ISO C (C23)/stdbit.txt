@@ -1,0 +1,182 @@
+//|----------------------------------------------------------------------------
+//| Version Macro (stdbit.h)
+//|----------------------------------------------------------------------------
+
+__STDC_VERSION_STDBIT_H__                                                       /* Integer constant denoting the version of stdbit.h supported. */
+
+
+//|----------------------------------------------------------------------------
+//| Endianness Constants (stdbit.h)
+//|----------------------------------------------------------------------------
+
+__STDC_ENDIAN_LITTLE__                                                          /* Integer constant identifying little-endian byte order. */
+__STDC_ENDIAN_BIG__                                                             /* Integer constant identifying big-endian byte order. */
+__STDC_ENDIAN_NATIVE__                                                          /* Integer constant equal to the byte order of the current platform. */
+
+
+//|----------------------------------------------------------------------------
+//| Leading Zero Bit Count (stdbit.h)
+//|----------------------------------------------------------------------------
+
+unsigned int  stdc_leading_zeros_uc  (unsigned char value);                     /* Counts leading zero bits in value. */
+unsigned int  stdc_leading_zeros_us  (unsigned short value);                    /* Counts leading zero bits in value. */
+unsigned int  stdc_leading_zeros_ui  (unsigned int value);                      /* Counts leading zero bits in value. */
+unsigned int  stdc_leading_zeros_ul  (unsigned long value);                     /* Counts leading zero bits in value. */
+unsigned int  stdc_leading_zeros_ull (unsigned long long value);                /* Counts leading zero bits in value. */
+unsigned int  stdc_leading_zeros     (generic-unsigned-type value);             /* Type-generic macro dispatching to the appropriate stdc_leading_zeros_* function. */
+
+
+//|----------------------------------------------------------------------------
+//| Leading One Bit Count (stdbit.h)
+//|----------------------------------------------------------------------------
+
+unsigned int  stdc_leading_ones_uc   (unsigned char value);                     /* Counts leading one bits in value. */
+unsigned int  stdc_leading_ones_us   (unsigned short value);                    /* Counts leading one bits in value. */
+unsigned int  stdc_leading_ones_ui   (unsigned int value);                      /* Counts leading one bits in value. */
+unsigned int  stdc_leading_ones_ul   (unsigned long value);                     /* Counts leading one bits in value. */
+unsigned int  stdc_leading_ones_ull  (unsigned long long value);                /* Counts leading one bits in value. */
+unsigned int  stdc_leading_ones      (generic-unsigned-type value);             /* Type-generic macro dispatching to the appropriate stdc_leading_ones_* function. */
+
+
+//|----------------------------------------------------------------------------
+//| Trailing Zero Bit Count (stdbit.h)
+//|----------------------------------------------------------------------------
+
+unsigned int  stdc_trailing_zeros_uc (unsigned char value);                     /* Counts trailing zero bits in value. */
+unsigned int  stdc_trailing_zeros_us (unsigned short value);                    /* Counts trailing zero bits in value. */
+unsigned int  stdc_trailing_zeros_ui (unsigned int value);                      /* Counts trailing zero bits in value. */
+unsigned int  stdc_trailing_zeros_ul (unsigned long value);                     /* Counts trailing zero bits in value. */
+unsigned int  stdc_trailing_zeros_ull(unsigned long long value);                /* Counts trailing zero bits in value. */
+unsigned int  stdc_trailing_zeros    (generic-unsigned-type value);             /* Type-generic macro dispatching to the appropriate stdc_trailing_zeros_* function. */
+
+
+//|----------------------------------------------------------------------------
+//| Trailing One Bit Count (stdbit.h)
+//|----------------------------------------------------------------------------
+
+unsigned int  stdc_trailing_ones_uc  (unsigned char value);                     /* Counts trailing one bits in value. */
+unsigned int  stdc_trailing_ones_us  (unsigned short value);                    /* Counts trailing one bits in value. */
+unsigned int  stdc_trailing_ones_ui  (unsigned int value);                      /* Counts trailing one bits in value. */
+unsigned int  stdc_trailing_ones_ul  (unsigned long value);                     /* Counts trailing one bits in value. */
+unsigned int  stdc_trailing_ones_ull (unsigned long long value);                /* Counts trailing one bits in value. */
+unsigned int  stdc_trailing_ones     (generic-unsigned-type value);             /* Type-generic macro dispatching to the appropriate stdc_trailing_ones_* function. */
+
+
+//|----------------------------------------------------------------------------
+//| First Leading Zero Bit Position (stdbit.h)
+//|----------------------------------------------------------------------------
+
+unsigned int  stdc_first_leading_zero_uc  (unsigned char value);                /* Returns the 1-based position of the first zero bit, from the most significant bit; 0 if none. */
+unsigned int  stdc_first_leading_zero_us  (unsigned short value);               /* Returns the 1-based position of the first zero bit, from the most significant bit; 0 if none. */
+unsigned int  stdc_first_leading_zero_ui  (unsigned int value);                 /* Returns the 1-based position of the first zero bit, from the most significant bit; 0 if none. */
+unsigned int  stdc_first_leading_zero_ul  (unsigned long value);                /* Returns the 1-based position of the first zero bit, from the most significant bit; 0 if none. */
+unsigned int  stdc_first_leading_zero_ull (unsigned long long value);           /* Returns the 1-based position of the first zero bit, from the most significant bit; 0 if none. */
+unsigned int  stdc_first_leading_zero     (generic-unsigned-type value);        /* Type-generic macro dispatching to the appropriate stdc_first_leading_zero_* function. */
+
+
+//|----------------------------------------------------------------------------
+//| First Leading One Bit Position (stdbit.h)
+//|----------------------------------------------------------------------------
+
+unsigned int  stdc_first_leading_one_uc   (unsigned char value);                /* Returns the 1-based position of the first one bit, from the most significant bit; 0 if none. */
+unsigned int  stdc_first_leading_one_us   (unsigned short value);               /* Returns the 1-based position of the first one bit, from the most significant bit; 0 if none. */
+unsigned int  stdc_first_leading_one_ui   (unsigned int value);                 /* Returns the 1-based position of the first one bit, from the most significant bit; 0 if none. */
+unsigned int  stdc_first_leading_one_ul   (unsigned long value);                /* Returns the 1-based position of the first one bit, from the most significant bit; 0 if none. */
+unsigned int  stdc_first_leading_one_ull  (unsigned long long value);           /* Returns the 1-based position of the first one bit, from the most significant bit; 0 if none. */
+unsigned int  stdc_first_leading_one      (generic-unsigned-type value);        /* Type-generic macro dispatching to the appropriate stdc_first_leading_one_* function. */
+
+
+//|----------------------------------------------------------------------------
+//| First Trailing Zero Bit Position (stdbit.h)
+//|----------------------------------------------------------------------------
+
+unsigned int  stdc_first_trailing_zero_uc  (unsigned char value);               /* Returns the 1-based position of the first zero bit, from the least significant bit; 0 if none. */
+unsigned int  stdc_first_trailing_zero_us  (unsigned short value);              /* Returns the 1-based position of the first zero bit, from the least significant bit; 0 if none. */
+unsigned int  stdc_first_trailing_zero_ui  (unsigned int value);                /* Returns the 1-based position of the first zero bit, from the least significant bit; 0 if none. */
+unsigned int  stdc_first_trailing_zero_ul  (unsigned long value);               /* Returns the 1-based position of the first zero bit, from the least significant bit; 0 if none. */
+unsigned int  stdc_first_trailing_zero_ull (unsigned long long value);          /* Returns the 1-based position of the first zero bit, from the least significant bit; 0 if none. */
+unsigned int  stdc_first_trailing_zero     (generic-unsigned-type value);       /* Type-generic macro dispatching to the appropriate stdc_first_trailing_zero_* function. */
+
+
+//|----------------------------------------------------------------------------
+//| First Trailing One Bit Position (stdbit.h)
+//|----------------------------------------------------------------------------
+
+unsigned int  stdc_first_trailing_one_uc   (unsigned char value);               /* Returns the 1-based position of the first one bit, from the least significant bit; 0 if none. */
+unsigned int  stdc_first_trailing_one_us   (unsigned short value);              /* Returns the 1-based position of the first one bit, from the least significant bit; 0 if none. */
+unsigned int  stdc_first_trailing_one_ui   (unsigned int value);                /* Returns the 1-based position of the first one bit, from the least significant bit; 0 if none. */
+unsigned int  stdc_first_trailing_one_ul   (unsigned long value);               /* Returns the 1-based position of the first one bit, from the least significant bit; 0 if none. */
+unsigned int  stdc_first_trailing_one_ull  (unsigned long long value);          /* Returns the 1-based position of the first one bit, from the least significant bit; 0 if none. */
+unsigned int  stdc_first_trailing_one      (generic-unsigned-type value);       /* Type-generic macro dispatching to the appropriate stdc_first_trailing_one_* function. */
+
+
+//|----------------------------------------------------------------------------
+//| Zero Bit Count (stdbit.h)
+//|----------------------------------------------------------------------------
+
+unsigned int  stdc_count_zeros_uc    (unsigned char value);                     /* Counts the number of zero bits in value. */
+unsigned int  stdc_count_zeros_us    (unsigned short value);                    /* Counts the number of zero bits in value. */
+unsigned int  stdc_count_zeros_ui    (unsigned int value);                      /* Counts the number of zero bits in value. */
+unsigned int  stdc_count_zeros_ul    (unsigned long value);                     /* Counts the number of zero bits in value. */
+unsigned int  stdc_count_zeros_ull   (unsigned long long value);                /* Counts the number of zero bits in value. */
+unsigned int  stdc_count_zeros       (generic-unsigned-type value);             /* Type-generic macro dispatching to the appropriate stdc_count_zeros_* function. */
+
+
+//|----------------------------------------------------------------------------
+//| One Bit Count / Population Count (stdbit.h)
+//|----------------------------------------------------------------------------
+
+unsigned int  stdc_count_ones_uc     (unsigned char value);                     /* Counts the number of one bits (population count) in value. */
+unsigned int  stdc_count_ones_us     (unsigned short value);                    /* Counts the number of one bits in value. */
+unsigned int  stdc_count_ones_ui     (unsigned int value);                      /* Counts the number of one bits in value. */
+unsigned int  stdc_count_ones_ul     (unsigned long value);                     /* Counts the number of one bits in value. */
+unsigned int  stdc_count_ones_ull    (unsigned long long value);                /* Counts the number of one bits in value. */
+unsigned int  stdc_count_ones        (generic-unsigned-type value);             /* Type-generic macro dispatching to the appropriate stdc_count_ones_* function. */
+
+
+//|----------------------------------------------------------------------------
+//| Single Bit / Power-of-Two Test (stdbit.h)
+//|----------------------------------------------------------------------------
+
+bool          stdc_has_single_bit_uc (unsigned char value);                     /* Returns true if value has exactly one bit set (is a power of two). */
+bool          stdc_has_single_bit_us (unsigned short value);                    /* Returns true if value has exactly one bit set (is a power of two). */
+bool          stdc_has_single_bit_ui (unsigned int value);                      /* Returns true if value has exactly one bit set (is a power of two). */
+bool          stdc_has_single_bit_ul (unsigned long value);                     /* Returns true if value has exactly one bit set (is a power of two). */
+bool          stdc_has_single_bit_ull(unsigned long long value);                /* Returns true if value has exactly one bit set (is a power of two). */
+bool          stdc_has_single_bit    (generic-unsigned-type value);             /* Type-generic macro dispatching to the appropriate stdc_has_single_bit_* function. */
+
+
+//|----------------------------------------------------------------------------
+//| Bit Width (stdbit.h)
+//|----------------------------------------------------------------------------
+
+unsigned int  stdc_bit_width_uc      (unsigned char value);                     /* Returns the number of bits needed to represent value. */
+unsigned int  stdc_bit_width_us      (unsigned short value);                    /* Returns the number of bits needed to represent value. */
+unsigned int  stdc_bit_width_ui      (unsigned int value);                      /* Returns the number of bits needed to represent value. */
+unsigned int  stdc_bit_width_ul      (unsigned long value);                     /* Returns the number of bits needed to represent value. */
+unsigned int  stdc_bit_width_ull     (unsigned long long value);                /* Returns the number of bits needed to represent value. */
+unsigned int  stdc_bit_width         (generic-unsigned-type value);             /* Type-generic macro dispatching to the appropriate stdc_bit_width_* function. */
+
+
+//|----------------------------------------------------------------------------
+//| Bit Floor (Round Down to Power of Two) (stdbit.h)
+//|----------------------------------------------------------------------------
+
+unsigned char       stdc_bit_floor_uc (unsigned char value);                    /* Returns the largest power of two not greater than value, or 0 if value is 0. */
+unsigned short      stdc_bit_floor_us (unsigned short value);                   /* Returns the largest power of two not greater than value, or 0 if value is 0. */
+unsigned int        stdc_bit_floor_ui (unsigned int value);                     /* Returns the largest power of two not greater than value, or 0 if value is 0. */
+unsigned long       stdc_bit_floor_ul (unsigned long value);                    /* Returns the largest power of two not greater than value, or 0 if value is 0. */
+unsigned long long  stdc_bit_floor_ull(unsigned long long value);               /* Returns the largest power of two not greater than value, or 0 if value is 0. */
+generic-unsigned-type stdc_bit_floor  (generic-unsigned-type value);            /* Type-generic macro dispatching to the appropriate stdc_bit_floor_* function. */
+
+
+//|----------------------------------------------------------------------------
+//| Bit Ceiling (Round Up to Power of Two) (stdbit.h)
+//|----------------------------------------------------------------------------
+
+unsigned char       stdc_bit_ceil_uc  (unsigned char value);                    /* Returns the smallest power of two not less than value. */
+unsigned short      stdc_bit_ceil_us  (unsigned short value);                   /* Returns the smallest power of two not less than value. */
+unsigned int        stdc_bit_ceil_ui  (unsigned int value);                     /* Returns the smallest power of two not less than value. */
+unsigned long       stdc_bit_ceil_ul  (unsigned long value);                    /* Returns the smallest power of two not less than value. */
+unsigned long long  stdc_bit_ceil_ull (unsigned long long value);               /* Returns the smallest power of two not less than value. */
+generic-unsigned-type stdc_bit_ceil   (generic-unsigned-type value);            /* Type-generic macro dispatching to the appropriate stdc_bit_ceil_* function. */

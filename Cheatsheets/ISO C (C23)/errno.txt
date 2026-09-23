@@ -1,0 +1,23 @@
+//|----------------------------------------------------------------------------
+//| Error Indicator (errno.h)
+//|----------------------------------------------------------------------------
+
+errno                                                                             /* Macro expanding to a modifiable lvalue of type int, holding the last error code set by a library function. */
+
+
+//|----------------------------------------------------------------------------
+//| Error Codes (errno.h)
+//|----------------------------------------------------------------------------
+
+EDOM                                                                              /* Domain error: argument outside the domain over which a math function is defined. */
+ERANGE                                                                            /* Range error: result of a function is too large or too small to be represented. */
+EILSEQ                                                                            /* Illegal byte sequence (e.g. from an invalid multibyte/wide-character conversion). */
+
+
+//|----------------------------------------------------------------------------
+//| Notes (errno.h)
+//|----------------------------------------------------------------------------
+/* EDOM, ERANGE, and EILSEQ are the only error codes guaranteed by ISO C.
+   POSIX and other platform headers may define many additional codes
+   (e.g. EACCES, ENOENT, EINVAL, EIO, ENOMEM, EPERM) that are NOT part of
+   standard C and are intentionally excluded from this cheatsheet. */

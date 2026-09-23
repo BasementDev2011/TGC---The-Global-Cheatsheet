@@ -1,0 +1,24 @@
+//|----------------------------------------------------------------------------
+//| Locale-Aware Character Classification (ctype.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+int           isalnum_l     (int c, locale_t locale);                          /* Tests whether c is alphanumeric in the specified locale. */
+int           isalpha_l     (int c, locale_t locale);                          /* Tests whether c is alphabetic in the specified locale. */
+int           isblank_l     (int c, locale_t locale);                          /* Tests whether c is a blank character in the specified locale. */
+int           iscntrl_l     (int c, locale_t locale);                          /* Tests whether c is a control character in the specified locale. */
+int           isdigit_l     (int c, locale_t locale);                          /* Tests whether c is a decimal digit in the specified locale. */
+int           isgraph_l     (int c, locale_t locale);                          /* Tests whether c is a printable non-space character in the specified locale. */
+int           islower_l     (int c, locale_t locale);                          /* Tests whether c is a lowercase letter in the specified locale. */
+int           isprint_l     (int c, locale_t locale);                          /* Tests whether c is a printable character in the specified locale. */
+int           ispunct_l     (int c, locale_t locale);                          /* Tests whether c is a punctuation character in the specified locale. */
+int           isspace_l     (int c, locale_t locale);                          /* Tests whether c is a white-space character in the specified locale. */
+int           isupper_l     (int c, locale_t locale);                          /* Tests whether c is an uppercase letter in the specified locale. */
+int           isxdigit_l    (int c, locale_t locale);                          /* Tests whether c is a hexadecimal digit in the specified locale. */
+
+
+//|----------------------------------------------------------------------------
+//| Locale-Aware Character Conversion (ctype.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+int           tolower_l     (int c, locale_t locale);                          /* Converts c to lowercase using the specified locale. */
+int           toupper_l     (int c, locale_t locale);                          /* Converts c to uppercase using the specified locale. */

@@ -1,0 +1,81 @@
+//|----------------------------------------------------------------------------
+//| File Descriptor / Stream Interoperability (stdio.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+int           fileno        (FILE *stream);                                      /* Returns the file descriptor associated with a stream. */
+FILE         *fdopen        (int fd, const char *mode);                          /* Associates a stream with an existing file descriptor. */
+
+
+//|----------------------------------------------------------------------------
+//| Pipe Streams (stdio.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+FILE         *popen         (const char *command, const char *mode);             /* Opens a process by creating a pipe and invoking a shell command. */
+int           pclose        (FILE *stream);                                      /* Closes a stream opened by popen. */
+
+
+//|----------------------------------------------------------------------------
+//| Explicit Stream Locking (stdio.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+void          flockfile     (FILE *file);                                        /* Acquires the lock for a stream, blocking if necessary. */
+int           ftrylockfile  (FILE *file);                                        /* Attempts to acquire the lock for a stream without blocking. */
+void          funlockfile   (FILE *file);                                        /* Releases the lock for a stream. */
+int           getc_unlocked (FILE *stream);                                      /* Equivalent to getc without locking. */
+int           putc_unlocked (int c, FILE *stream);                               /* Equivalent to putc without locking. */
+int           getchar_unlocked (void);                                           /* Equivalent to getchar without locking. */
+int           putchar_unlocked (int c);                                          /* Equivalent to putchar without locking. */
+
+
+//|----------------------------------------------------------------------------
+//| Wide File Offset Positioning (stdio.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+int           fseeko        (FILE *stream, off_t offset, int whence);            /* Sets the file position, using an off_t offset. */
+off_t         ftello        (FILE *stream);                                      /* Returns the current file position as an off_t. */
+
+
+//|----------------------------------------------------------------------------
+//| In-Memory Streams (stdio.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+FILE         *fmemopen      (void *restrict buf, size_t size, const char *restrict mode); /* Opens a stream that reads from or writes to a memory buffer. */
+FILE         *open_memstream (char **restrict bufp, size_t *restrict sizep);      /* Opens a dynamically growing memory stream for writing. */
+
+
+//|----------------------------------------------------------------------------
+//| Line and Delimited Input (stdio.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+ssize_t       getline       (char **restrict lineptr, size_t *restrict n, FILE *restrict stream); /* Reads an entire line from a stream, allocating a buffer as needed. */
+ssize_t       getdelim      (char **restrict lineptr, size_t *restrict n, int delim, FILE *restrict stream); /* Reads input up to a delimiter, allocating a buffer as needed. */
+
+
+//|----------------------------------------------------------------------------
+//| Formatted Output to a File Descriptor (stdio.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+int           dprintf       (int fd, const char *restrict format, ...);          /* Writes formatted output to a file descriptor. */
+int           vdprintf      (int fd, const char *restrict format, va_list ap);   /* Writes formatted output to a file descriptor using a va_list. */
+
+
+//|----------------------------------------------------------------------------
+//| Pathname Renaming (stdio.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+int           renameat      (int oldfd, const char *old, int newfd, const char *new); /* Renames a file relative to two directory file descriptors. */
+
+
+//|----------------------------------------------------------------------------
+//| Legacy Functions (stdio.h) [POSIX, LEGACY]
+//|----------------------------------------------------------------------------
+
+char         *tempnam       (const char *dir, const char *pfx);                  /* Generates a unique temporary filename. LEGACY: security concerns, prefer mkstemp. */
+char         *ctermid       (char *s);                                           /* Generates the pathname of the controlling terminal. */
+
+
+//|----------------------------------------------------------------------------
+//| Constants (stdio.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+L_ctermid                                                                      /* Maximum size of a string generated by ctermid. */

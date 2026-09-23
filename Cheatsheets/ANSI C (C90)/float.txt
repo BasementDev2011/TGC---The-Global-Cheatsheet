@@ -1,0 +1,57 @@
+//|----------------------------------------------------------------------------
+//| Floating-Point Characteristics (float.h)
+//|----------------------------------------------------------------------------
+
+FLT_RADIX                                                                       /* Radix (base) of exponent representation, e.g. 2. */
+FLT_ROUNDS                                                                      /* Rounding mode for floating-point addition. */
+
+
+//|----------------------------------------------------------------------------
+//| Precision (float.h)
+//|----------------------------------------------------------------------------
+
+FLT_MANT_DIG                                                                    /* Number of base-FLT_RADIX digits in the float mantissa. */
+DBL_MANT_DIG                                                                    /* Number of base-FLT_RADIX digits in the double mantissa. */
+LDBL_MANT_DIG                                                                   /* Number of base-FLT_RADIX digits in the long double mantissa. */
+
+FLT_DIG                                                                         /* Number of decimal digits of precision for float. */
+DBL_DIG                                                                         /* Number of decimal digits of precision for double. */
+LDBL_DIG                                                                        /* Number of decimal digits of precision for long double. */
+
+
+//|----------------------------------------------------------------------------
+//| Exponent Range (float.h)
+//|----------------------------------------------------------------------------
+
+FLT_MIN_EXP                                                                     /* Minimum negative integer exponent for float such that FLT_RADIX raised to that power minus 1 is a normalized float. */
+DBL_MIN_EXP                                                                     /* Minimum negative integer exponent for double. */
+LDBL_MIN_EXP                                                                    /* Minimum negative integer exponent for long double. */
+
+FLT_MIN_10_EXP                                                                  /* Minimum negative integer such that 10 raised to that power is in the range of normalized floats. */
+DBL_MIN_10_EXP                                                                  /* Minimum negative integer such that 10 raised to that power is in the range of normalized doubles. */
+LDBL_MIN_10_EXP                                                                 /* Minimum negative integer such that 10 raised to that power is in the range of normalized long doubles. */
+
+FLT_MAX_EXP                                                                     /* Maximum integer exponent for float such that FLT_RADIX raised to that power minus 1 is a representable float. */
+DBL_MAX_EXP                                                                     /* Maximum integer exponent for double. */
+LDBL_MAX_EXP                                                                    /* Maximum integer exponent for long double. */
+
+FLT_MAX_10_EXP                                                                  /* Maximum integer such that 10 raised to that power is in the range of representable floats. */
+DBL_MAX_10_EXP                                                                  /* Maximum integer such that 10 raised to that power is in the range of representable doubles. */
+LDBL_MAX_10_EXP                                                                 /* Maximum integer such that 10 raised to that power is in the range of representable long doubles. */
+
+
+//|----------------------------------------------------------------------------
+//| Maximum, Minimum, and Epsilon Values (float.h)
+//|----------------------------------------------------------------------------
+
+FLT_MAX                                                                         /* Maximum finite representable float value. */
+DBL_MAX                                                                         /* Maximum finite representable double value. */
+LDBL_MAX                                                                        /* Maximum finite representable long double value. */
+
+FLT_EPSILON                                                                     /* Difference between 1.0 and the smallest float value greater than 1.0. */
+DBL_EPSILON                                                                     /* Difference between 1.0 and the smallest double value greater than 1.0. */
+LDBL_EPSILON                                                                    /* Difference between 1.0 and the smallest long double value greater than 1.0. */
+
+FLT_MIN                                                                         /* Minimum positive normalized float value. */
+DBL_MIN                                                                         /* Minimum positive normalized double value. */
+LDBL_MIN                                                                        /* Minimum positive normalized long double value. */

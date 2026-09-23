@@ -1,0 +1,35 @@
+//|----------------------------------------------------------------------------
+//| Wide String Copying (wchar.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+wchar_t      *wcpcpy        (wchar_t *restrict s1, const wchar_t *restrict s2); /* Copies a wide string and returns a pointer to the terminating null wide character of the destination. */
+wchar_t      *wcpncpy       (wchar_t *restrict s1, const wchar_t *restrict s2, size_t n); /* Copies at most n wide characters and returns a pointer to the end of the destination. */
+
+
+//|----------------------------------------------------------------------------
+//| Wide String Duplication (wchar.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+wchar_t      *wcsdup        (const wchar_t *s);                                 /* Allocates and returns a duplicate of a wide string. */
+
+
+//|----------------------------------------------------------------------------
+//| Wide String Length (wchar.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+size_t        wcsnlen       (const wchar_t *s, size_t maxlen);                  /* Returns the length of a wide string, up to a maximum of maxlen wide characters. */
+
+
+//|----------------------------------------------------------------------------
+//| Wide Memory Stream (wchar.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+FILE         *open_wmemstream (wchar_t **bufp, size_t *sizep);                  /* Opens a write-only wide-character dynamic memory buffer stream. */
+
+
+//|----------------------------------------------------------------------------
+//| Bounded Multibyte and Wide Character Conversion (wchar.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+size_t        mbsnrtowcs    (wchar_t *restrict dst, const char **restrict src, size_t nmc, size_t len, mbstate_t *restrict ps); /* Converts at most nmc bytes of a multibyte string to a wide-character string. */
+size_t        wcsnrtombs    (char *restrict dst, const wchar_t **restrict src, size_t nwc, size_t len, mbstate_t *restrict ps); /* Converts at most nwc wide characters to a multibyte string. */

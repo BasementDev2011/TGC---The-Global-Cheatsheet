@@ -1,0 +1,112 @@
+//|----------------------------------------------------------------------------
+//| Program Termination (stdlib.h)
+//|----------------------------------------------------------------------------
+
+void          abort         (void);                                              /* Terminates the program abnormally, without normal termination processing. */
+void          exit          (int status);                                        /* Terminates the program normally, performing normal termination processing. */
+int           atexit        (void (*function)(void));                            /* Registers a function to be called when the program terminates normally via exit. */
+
+
+//|----------------------------------------------------------------------------
+//| Communication with the Environment (stdlib.h)
+//|----------------------------------------------------------------------------
+
+char         *getenv        (const char *name);                                  /* Returns the value of the environment variable name, or a null pointer if it does not exist. */
+int           system        (const char *string);                                /* Passes string to the host environment's command processor for execution. */
+
+
+//|----------------------------------------------------------------------------
+//| Searching and Sorting (stdlib.h)
+//|----------------------------------------------------------------------------
+
+void         *bsearch       (const void *key, const void *base, size_t nmemb, size_t size, int (*compar)(const void *, const void *)); /* Searches a sorted array of nmemb elements for one matching key. */
+void          qsort         (void *base, size_t nmemb, size_t size, int (*compar)(const void *, const void *)); /* Sorts an array of nmemb elements using the given comparison function. */
+
+
+//|----------------------------------------------------------------------------
+//| Pseudo-Random Number Generation (stdlib.h)
+//|----------------------------------------------------------------------------
+
+int           rand          (void);                                              /* Returns a pseudo-random integer between 0 and RAND_MAX. */
+void          srand         (unsigned int seed);                                 /* Seeds the pseudo-random number generator used by rand. */
+
+
+//|----------------------------------------------------------------------------
+//| Memory Management (stdlib.h)
+//|----------------------------------------------------------------------------
+
+void         *calloc        (size_t nmemb, size_t size);                         /* Allocates zero-initialized storage for nmemb objects of size bytes each. */
+void         *malloc        (size_t size);                                       /* Allocates size bytes of uninitialized storage. */
+void         *realloc       (void *ptr, size_t size);                            /* Resizes the memory block pointed to by ptr to size bytes, preserving existing contents. */
+void          free          (void *ptr);                                         /* Releases memory previously allocated by calloc, malloc, or realloc. */
+
+
+//|----------------------------------------------------------------------------
+//| Integer Arithmetic (stdlib.h)
+//|----------------------------------------------------------------------------
+
+int           abs           (int j);                                             /* Computes the absolute value of an int. */
+long int      labs          (long int j);                                        /* Computes the absolute value of a long int. */
+div_t         div           (int numer, int denom);                              /* Computes the quotient and remainder of numer divided by denom, as ints. */
+ldiv_t        ldiv          (long int numer, long int denom);                    /* Computes the quotient and remainder of numer divided by denom, as long ints. */
+
+
+//|----------------------------------------------------------------------------
+//| String Conversion (stdlib.h)
+//|----------------------------------------------------------------------------
+
+double        atof          (const char *nptr);                                  /* Converts the initial portion of the string nptr to double. */
+int           atoi          (const char *nptr);                                  /* Converts the initial portion of the string nptr to int. */
+long int      atol          (const char *nptr);                                  /* Converts the initial portion of the string nptr to long int. */
+double        strtod        (const char *nptr, char **endptr);                   /* Converts the initial portion of nptr to double, storing a pointer to the remainder in endptr. */
+long int      strtol        (const char *nptr, char **endptr, int base);         /* Converts the initial portion of nptr to long int using the given base, storing a pointer to the remainder in endptr. */
+unsigned long int
+              strtoul       (const char *nptr, char **endptr, int base);         /* Converts the initial portion of nptr to unsigned long int using the given base, storing a pointer to the remainder in endptr. */
+
+
+//|----------------------------------------------------------------------------
+//| Multibyte Character Conversion (stdlib.h)
+//|----------------------------------------------------------------------------
+
+int           mblen         (const char *s, size_t n);                           /* Determines the number of bytes in the next multibyte character in s. */
+int           mbtowc        (wchar_t *pwc, const char *s, size_t n);             /* Converts a multibyte character in s to a wide character stored in pwc. */
+int           wctomb        (char *s, wchar_t wchar);                            /* Converts a wide character wchar to its multibyte representation, stored in s. */
+size_t        mbstowcs      (wchar_t *pwcs, const char *s, size_t n);            /* Converts a multibyte character string s to a wide-character string stored in pwcs. */
+size_t        wcstombs      (char *s, const wchar_t *pwcs, size_t n);            /* Converts a wide-character string pwcs to a multibyte character string stored in s. */
+
+
+//|----------------------------------------------------------------------------
+//| Constants (stdlib.h)
+//|----------------------------------------------------------------------------
+
+NULL                                                                            /* Null pointer constant. */
+EXIT_SUCCESS                                                                    /* Integer constant indicating successful program termination, for use with exit. */
+EXIT_FAILURE                                                                    /* Integer constant indicating unsuccessful program termination, for use with exit. */
+RAND_MAX                                                                        /* Maximum value returned by rand. */
+MB_CUR_MAX                                                                      /* Maximum number of bytes in a multibyte character for the current locale. */
+
+
+//|----------------------------------------------------------------------------
+//| Types (stdlib.h)
+//|----------------------------------------------------------------------------
+
+size_t                                                                          /* Unsigned integer type for the result of the sizeof operator. */
+wchar_t                                                                         /* Integer type capable of representing distinct codes for all members of the largest extended character set among the supported locales. */
+div_t                                                                           /* Structure type returned by div, holding a quotient and a remainder as ints. */
+ldiv_t                                                                          /* Structure type returned by ldiv, holding a quotient and a remainder as long ints. */
+
+
+//|----------------------------------------------------------------------------
+//| div_t Members (stdlib.h)
+//|----------------------------------------------------------------------------
+
+quot                                                                            /* Quotient member of div_t. */
+rem                                                                             /* Remainder member of div_t. */
+
+
+//|----------------------------------------------------------------------------
+//| ldiv_t Members (stdlib.h)
+//|----------------------------------------------------------------------------
+
+quot                                                                            /* Quotient member of ldiv_t. */
+rem                                                                             /* Remainder member of ldiv_t. */

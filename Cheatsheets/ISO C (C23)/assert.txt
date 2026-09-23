@@ -1,0 +1,14 @@
+//|----------------------------------------------------------------------------
+//| Diagnostics (assert.h)
+//|----------------------------------------------------------------------------
+
+assert(expression)                                                                /* Macro. If expression evaluates to false (0), prints a diagnostic and calls abort(); has no effect if NDEBUG is defined before including assert.h. */
+
+static_assert(expression, message)                                                /* Macro (C11+). Convenience alias for the _Static_assert keyword; performs a compile-time assertion, halting compilation with message if expression is false. */
+
+
+//|----------------------------------------------------------------------------
+//| Macros (assert.h)
+//|----------------------------------------------------------------------------
+
+NDEBUG                                                                            /* If defined by the user before including assert.h, disables the assert() macro (assert becomes a no-op). */

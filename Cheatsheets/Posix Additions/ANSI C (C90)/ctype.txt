@@ -1,0 +1,27 @@
+//|----------------------------------------------------------------------------
+//| Legacy ASCII Classification (ctype.h) [POSIX, LEGACY]
+//|----------------------------------------------------------------------------
+
+int           isascii       (int c);                                             /* Tests whether c is a 7-bit ASCII character. LEGACY: obsolescent, removed from POSIX.1-2008 base. */
+int           toascii       (int c);                                             /* Converts c to a 7-bit ASCII character by clearing high-order bits. LEGACY: obsolescent, removed from POSIX.1-2008 base. */
+
+
+//|----------------------------------------------------------------------------
+//| Locale-Specific Classification (ctype.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+//| Note: locale_t is declared in <locale.h> but required here for use by the _l functions.
+
+int           isalnum_l     (int c, locale_t loc);                               /* Tests for an alphanumeric character in the given locale. */
+int           isalpha_l     (int c, locale_t loc);                               /* Tests for an alphabetic character in the given locale. */
+int           isblank_l     (int c, locale_t loc);                               /* Tests for a blank character in the given locale. */
+int           iscntrl_l     (int c, locale_t loc);                               /* Tests for a control character in the given locale. */
+int           isdigit_l     (int c, locale_t loc);                               /* Tests for a decimal digit in the given locale. */
+int           isgraph_l     (int c, locale_t loc);                               /* Tests for a printable character other than space in the given locale. */
+int           islower_l     (int c, locale_t loc);                               /* Tests for a lowercase letter in the given locale. */
+int           isprint_l     (int c, locale_t loc);                               /* Tests for a printable character in the given locale. */
+int           ispunct_l     (int c, locale_t loc);                               /* Tests for a punctuation character in the given locale. */
+int           isspace_l     (int c, locale_t loc);                               /* Tests for a whitespace character in the given locale. */
+int           isupper_l     (int c, locale_t loc);                               /* Tests for an uppercase letter in the given locale. */
+int           isxdigit_l    (int c, locale_t loc);                               /* Tests for a hexadecimal digit in the given locale. */
+int           tolower_l     (int c, locale_t loc);                               /* Converts c to lowercase in the given locale. */
+int           toupper_l     (int c, locale_t loc);                               /* Converts c to uppercase in the given locale. */

@@ -1,0 +1,13 @@
+//|----------------------------------------------------------------------------
+//| Error Indicator (errno.h)
+//|----------------------------------------------------------------------------
+
+errno                                                                          /* Macro expanding to a modifiable lvalue of type int; set by library functions to indicate an error condition. */
+
+
+//|----------------------------------------------------------------------------
+//| Error Constants (errno.h)
+//|----------------------------------------------------------------------------
+
+EDOM                                                                            /* Domain error: argument outside the domain over which a math function is defined. */
+ERANGE                                                                          /* Range error: result of a function cannot be represented in the return type. */

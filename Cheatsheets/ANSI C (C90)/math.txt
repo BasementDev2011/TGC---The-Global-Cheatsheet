@@ -1,0 +1,57 @@
+//|----------------------------------------------------------------------------
+//| Trigonometric Functions (math.h)
+//|----------------------------------------------------------------------------
+
+double        sin           (double x);                                          /* Computes the sine of x (radians). */
+double        cos           (double x);                                          /* Computes the cosine of x (radians). */
+double        tan           (double x);                                          /* Computes the tangent of x (radians). */
+double        asin          (double x);                                          /* Computes the arc sine of x, returning a value in [-pi/2, pi/2]. */
+double        acos          (double x);                                          /* Computes the arc cosine of x, returning a value in [0, pi]. */
+double        atan          (double x);                                          /* Computes the arc tangent of x, returning a value in [-pi/2, pi/2]. */
+double        atan2         (double y, double x);                                /* Computes the arc tangent of y/x, using the signs of both arguments to determine the quadrant. */
+
+
+//|----------------------------------------------------------------------------
+//| Hyperbolic Functions (math.h)
+//|----------------------------------------------------------------------------
+
+double        sinh          (double x);                                          /* Computes the hyperbolic sine of x. */
+double        cosh          (double x);                                          /* Computes the hyperbolic cosine of x. */
+double        tanh          (double x);                                          /* Computes the hyperbolic tangent of x. */
+
+
+//|----------------------------------------------------------------------------
+//| Exponential and Logarithmic Functions (math.h)
+//|----------------------------------------------------------------------------
+
+double        exp           (double x);                                          /* Computes e raised to the power x. */
+double        log           (double x);                                          /* Computes the natural logarithm of x. */
+double        log10         (double x);                                          /* Computes the base-10 logarithm of x. */
+double        frexp         (double value, int *exp);                            /* Breaks value into a normalized fraction and an integral power of 2, stored in *exp. */
+double        ldexp         (double x, int exp);                                 /* Computes x multiplied by 2 raised to the power exp. */
+double        modf          (double value, double *iptr);                        /* Breaks value into integral and fractional parts, storing the integral part in *iptr. */
+
+
+//|----------------------------------------------------------------------------
+//| Power Functions (math.h)
+//|----------------------------------------------------------------------------
+
+double        pow           (double x, double y);                                /* Computes x raised to the power y. */
+double        sqrt          (double x);                                          /* Computes the nonnegative square root of x. */
+
+
+//|----------------------------------------------------------------------------
+//| Nearest Integer, Absolute Value, and Remainder Functions (math.h)
+//|----------------------------------------------------------------------------
+
+double        ceil          (double x);                                          /* Computes the smallest integer value not less than x. */
+double        floor         (double x);                                          /* Computes the largest integer value not greater than x. */
+double        fabs          (double x);                                          /* Computes the absolute value of x. */
+double        fmod          (double x, double y);                                /* Computes the floating-point remainder of x divided by y. */
+
+
+//|----------------------------------------------------------------------------
+//| Constants (math.h)
+//|----------------------------------------------------------------------------
+
+HUGE_VAL                                                                        /* Value returned by math functions on overflow, expanding to a positive double expression. */

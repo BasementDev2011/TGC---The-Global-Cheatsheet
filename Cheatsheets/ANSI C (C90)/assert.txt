@@ -1,0 +1,5 @@
+//|----------------------------------------------------------------------------
+//| Diagnostics (assert.h)
+//|----------------------------------------------------------------------------
+
+void          assert        (int expression);                                    /* Writes diagnostic information and calls abort if expression is false (0); has no effect if NDEBUG is defined at the point assert.h was last included. */

@@ -1,0 +1,72 @@
+//|----------------------------------------------------------------------------
+//| File Descriptor Functions (stdio.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+FILE         *fdopen        (int fd, const char *mode);                         /* Associates a stream with a file descriptor. */
+int           fileno        (FILE *stream);                                     /* Returns the file descriptor associated with a stream. */
+char         *ctermid       (char *s);                                          /* Generates the pathname of the controlling terminal. */
+
+
+//|----------------------------------------------------------------------------
+//| Atomic File Renaming (stdio.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+int           renameat      (int oldfd, const char *old, int newfd, const char *new); /* Renames a file relative to directory file descriptors. */
+
+
+//|----------------------------------------------------------------------------
+//| Stream Locking Functions (stdio.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+void          flockfile     (FILE *file);                                       /* Acquires an exclusive lock on a stream. */
+int           ftrylockfile  (FILE *file);                                       /* Attempts to acquire a lock on a stream without blocking. */
+void          funlockfile   (FILE *file);                                       /* Releases a lock on a stream. */
+
+
+//|----------------------------------------------------------------------------
+//| Unlocked I/O Functions (stdio.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+int           getc_unlocked    (FILE *stream);                                  /* Equivalent to getc without locking the stream. */
+int           getchar_unlocked (void);                                          /* Equivalent to getchar without locking stdin. */
+int           putc_unlocked    (int c, FILE *stream);                           /* Equivalent to putc without locking the stream. */
+int           putchar_unlocked (int c);                                         /* Equivalent to putchar without locking stdout. */
+
+
+//|----------------------------------------------------------------------------
+//| Memory Stream Functions (stdio.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+FILE         *fmemopen      (void *restrict buf, size_t size, const char *restrict mode); /* Opens a memory buffer as a stream. */
+FILE         *open_memstream (char **bufp, size_t *sizep);                      /* Opens a write-only dynamic memory buffer stream. */
+
+
+//|----------------------------------------------------------------------------
+//| Line Reading Functions (stdio.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+ssize_t       getdelim      (char **restrict lineptr, size_t *restrict n, int delimiter, FILE *restrict stream); /* Reads from a stream until a delimiter is encountered. */
+ssize_t       getline       (char **restrict lineptr, size_t *restrict n, FILE *restrict stream); /* Reads an entire line from a stream. */
+
+
+//|----------------------------------------------------------------------------
+//| Output to File Descriptor (stdio.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+int           dprintf       (int fd, const char *restrict format, ...);         /* Writes formatted output to a file descriptor. */
+int           vdprintf      (int fd, const char *restrict format, va_list ap);  /* Writes formatted output to a file descriptor using a va_list. */
+
+
+//|----------------------------------------------------------------------------
+//| Process Pipe Functions (stdio.h) [POSIX XSI]
+//|----------------------------------------------------------------------------
+
+FILE         *popen         (const char *command, const char *mode);            /* Creates a pipe to an executed command and returns a stream. */
+int           pclose        (FILE *stream);                                     /* Closes a pipe stream opened by popen and returns the exit status. */
+
+
+//|----------------------------------------------------------------------------
+//| Legacy Functions (stdio.h) [POSIX XSI][obsolescent]
+//|----------------------------------------------------------------------------
+
+char         *tempnam       (const char *dir, const char *pfx);                 /* Generates a unique pathname in a specified directory. Superseded by mkstemp. */

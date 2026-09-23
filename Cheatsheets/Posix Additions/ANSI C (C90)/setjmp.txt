@@ -1,0 +1,13 @@
+//|----------------------------------------------------------------------------
+//| Signal-Safe Non-Local Jumps (setjmp.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+int           sigsetjmp     (sigjmp_buf env, int savemask);                      /* Saves calling environment, optionally saving the signal mask. */
+void          siglongjmp    (sigjmp_buf env, int val);                           /* Restores an environment saved by sigsetjmp. */
+
+
+//|----------------------------------------------------------------------------
+//| Types (setjmp.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+sigjmp_buf                                                                     /* Type of the array used by sigsetjmp/siglongjmp, including signal mask state. */

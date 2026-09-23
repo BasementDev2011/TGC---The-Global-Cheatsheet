@@ -1,0 +1,40 @@
+//|----------------------------------------------------------------------------
+//| Locale-Aware Wide Character Classification (wctype.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+int           iswalnum_l    (wint_t wc, locale_t locale);                       /* Tests whether wc is alphanumeric in the specified locale. */
+int           iswalpha_l    (wint_t wc, locale_t locale);                       /* Tests whether wc is alphabetic in the specified locale. */
+int           iswblank_l    (wint_t wc, locale_t locale);                       /* Tests whether wc is a blank character in the specified locale. */
+int           iswcntrl_l    (wint_t wc, locale_t locale);                       /* Tests whether wc is a control character in the specified locale. */
+int           iswdigit_l    (wint_t wc, locale_t locale);                       /* Tests whether wc is a decimal digit in the specified locale. */
+int           iswgraph_l    (wint_t wc, locale_t locale);                       /* Tests whether wc is a printable non-space wide character in the specified locale. */
+int           iswlower_l    (wint_t wc, locale_t locale);                       /* Tests whether wc is a lowercase letter in the specified locale. */
+int           iswprint_l    (wint_t wc, locale_t locale);                       /* Tests whether wc is a printable wide character in the specified locale. */
+int           iswpunct_l    (wint_t wc, locale_t locale);                       /* Tests whether wc is a punctuation character in the specified locale. */
+int           iswspace_l    (wint_t wc, locale_t locale);                       /* Tests whether wc is a white-space wide character in the specified locale. */
+int           iswupper_l    (wint_t wc, locale_t locale);                       /* Tests whether wc is an uppercase letter in the specified locale. */
+int           iswxdigit_l   (wint_t wc, locale_t locale);                       /* Tests whether wc is a hexadecimal digit in the specified locale. */
+
+
+//|----------------------------------------------------------------------------
+//| Locale-Aware Wide Character Conversion (wctype.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+wint_t        towlower_l    (wint_t wc, locale_t locale);                       /* Converts wc to lowercase using the specified locale. */
+wint_t        towupper_l    (wint_t wc, locale_t locale);                       /* Converts wc to uppercase using the specified locale. */
+
+
+//|----------------------------------------------------------------------------
+//| Locale-Aware Generic Wide Character Classification (wctype.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+int           iswctype_l    (wint_t wc, wctype_t charclass, locale_t locale);   /* Tests whether wc belongs to the specified character class in the given locale. */
+wctype_t      wctype_l      (const char *property, locale_t locale);            /* Returns a character class descriptor for the named property in the specified locale. */
+
+
+//|----------------------------------------------------------------------------
+//| Locale-Aware Generic Wide Character Conversion (wctype.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+wint_t        towctrans_l   (wint_t wc, wctrans_t desc, locale_t locale);       /* Applies the character mapping described by desc to wc in the specified locale. */
+wctrans_t     wctrans_l     (const char *charclass, locale_t locale);           /* Returns a character mapping descriptor for the named mapping in the specified locale. */

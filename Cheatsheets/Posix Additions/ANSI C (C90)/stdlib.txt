@@ -1,0 +1,89 @@
+//|----------------------------------------------------------------------------
+//| Environment Variable Manipulation (stdlib.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+int           setenv        (const char *name, const char *value, int overwrite); /* Sets an environment variable. */
+int           unsetenv      (const char *name);                                  /* Removes an environment variable. */
+int           putenv        (char *string);                                      /* Adds or changes an environment variable from a "name=value" string. */
+
+
+//|----------------------------------------------------------------------------
+//| Temporary Files and Directories (stdlib.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+int           mkstemp       (char *template);                                    /* Creates and opens a unique temporary file. */
+char         *mkdtemp       (char *template);                                    /* Creates a unique temporary directory. */
+
+
+//|----------------------------------------------------------------------------
+//| Pathname Resolution (stdlib.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+char         *realpath      (const char *restrict path, char *restrict resolved_path); /* Resolves a pathname to an absolute, canonicalized path. */
+
+
+//|----------------------------------------------------------------------------
+//| Alternate Random Number Generation (stdlib.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+long          random        (void);                                              /* Returns a pseudo-random long integer. */
+void          srandom       (unsigned int seed);                                 /* Seeds the random number generator used by random. */
+char         *initstate     (unsigned int seed, char *state, size_t size);        /* Initializes and switches to a new state array for random. */
+char         *setstate      (char *state);                                       /* Switches to a previously initialized state array for random. */
+int           rand_r        (unsigned int *seed);                                /* Thread-safe pseudo-random number generator. */
+
+
+//|----------------------------------------------------------------------------
+//| 48-bit Pseudo-Random Number Generators (stdlib.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+double        drand48       (void);                                              /* Returns a random double in [0.0, 1.0). */
+double        erand48       (unsigned short xsubi[3]);                           /* Returns a random double using an explicit state array. */
+long          lrand48       (void);                                              /* Returns a random long in [0, 2^31). */
+long          nrand48       (unsigned short xsubi[3]);                           /* Returns a random long using an explicit state array. */
+long          mrand48       (void);                                              /* Returns a signed random long. */
+long          jrand48       (unsigned short xsubi[3]);                           /* Returns a signed random long using an explicit state array. */
+void          srand48       (long seedval);                                      /* Seeds the drand48/lrand48/mrand48 family. */
+unsigned short *seed48      (unsigned short seed16v[3]);                         /* Seeds the family using an explicit state array. */
+void          lcong48       (unsigned short param[7]);                           /* Sets full generator parameters for the 48-bit family. */
+
+
+//|----------------------------------------------------------------------------
+//| Base-64 Encoding (stdlib.h) [POSIX, LEGACY]
+//|----------------------------------------------------------------------------
+
+char         *l64a          (long value);                                        /* Converts a long to a base-64 ASCII string. LEGACY. */
+long          a64l          (const char *str);                                   /* Converts a base-64 ASCII string to a long. LEGACY. */
+
+
+//|----------------------------------------------------------------------------
+//| Legacy Numeric Conversion (stdlib.h) [XSI, LEGACY]
+//|----------------------------------------------------------------------------
+
+char         *ecvt          (double value, int ndigit, int *decpt, int *sign);    /* Converts a double to a string of digits. LEGACY: superseded by snprintf. */
+char         *fcvt          (double value, int ndigit, int *decpt, int *sign);    /* Converts a double to a string of digits at fixed decimal position. LEGACY. */
+char         *gcvt          (double value, int ndigit, char *buf);                /* Converts a double to a string in general format. LEGACY. */
+
+
+//|----------------------------------------------------------------------------
+//| Memory Alignment (stdlib.h) [POSIX.1-2001]
+//|----------------------------------------------------------------------------
+
+int           posix_memalign (void **memptr, size_t alignment, size_t size);      /* Allocates aligned memory. */
+
+
+//|----------------------------------------------------------------------------
+//| Pseudo-Terminal Functions (stdlib.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+int           posix_openpt  (int oflag);                                         /* Opens a pseudo-terminal master device. */
+char         *ptsname       (int fildes);                                        /* Returns the name of the pseudo-terminal slave device. */
+int           grantpt       (int fildes);                                        /* Grants access to a pseudo-terminal slave device. */
+int           unlockpt      (int fildes);                                        /* Unlocks a pseudo-terminal master/slave pair. */
+
+
+//|----------------------------------------------------------------------------
+//| Option Parsing (stdlib.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+int           getsubopt     (char **optionp, char *const *keylistp, char **valuep); /* Parses suboption arguments from a comma-separated string. */

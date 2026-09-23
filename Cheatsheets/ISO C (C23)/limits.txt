@@ -1,0 +1,43 @@
+//|----------------------------------------------------------------------------
+//| Character Limits (limits.h)
+//|----------------------------------------------------------------------------
+
+CHAR_BIT                                                                           /* Number of bits in a byte (char). */
+SCHAR_MIN                                                                          /* Minimum value of signed char. */
+SCHAR_MAX                                                                          /* Maximum value of signed char. */
+UCHAR_MAX                                                                          /* Maximum value of unsigned char. */
+CHAR_MIN                                                                           /* Minimum value of char (depends on signedness). */
+CHAR_MAX                                                                           /* Maximum value of char (depends on signedness). */
+MB_LEN_MAX                                                                         /* Maximum number of bytes in a multibyte character across all locales. */
+
+
+//|----------------------------------------------------------------------------
+//| Integer Limits (limits.h)
+//|----------------------------------------------------------------------------
+
+SHRT_MIN                                                                           /* Minimum value of short int. */
+SHRT_MAX                                                                           /* Maximum value of short int. */
+USHRT_MAX                                                                          /* Maximum value of unsigned short int. */
+INT_MIN                                                                            /* Minimum value of int. */
+INT_MAX                                                                            /* Maximum value of int. */
+UINT_MAX                                                                           /* Maximum value of unsigned int. */
+LONG_MIN                                                                           /* Minimum value of long int. */
+LONG_MAX                                                                           /* Maximum value of long int. */
+ULONG_MAX                                                                          /* Maximum value of unsigned long int. */
+
+
+//|----------------------------------------------------------------------------
+//| Long Long Integer Limits (limits.h) — C99+
+//|----------------------------------------------------------------------------
+
+LLONG_MIN                                                                          /* Minimum value of long long int. */
+LLONG_MAX                                                                          /* Maximum value of long long int. */
+ULLONG_MAX                                                                         /* Maximum value of unsigned long long int. */
+
+
+//|----------------------------------------------------------------------------
+//| Notes (limits.h)
+//|----------------------------------------------------------------------------
+/* POSIX systems extend <limits.h> with many additional macros (e.g.
+   PATH_MAX, NAME_MAX, PIPE_BUF, OPEN_MAX, HOST_NAME_MAX). These are NOT
+   part of ISO C and are intentionally excluded from this cheatsheet. */

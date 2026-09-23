@@ -1,0 +1,52 @@
+//|----------------------------------------------------------------------------
+//| Time Manipulation (time.h)
+//|----------------------------------------------------------------------------
+
+clock_t       clock         (void);                                              /* Returns the processor time consumed by the program so far, or (clock_t)-1 if unavailable. */
+double        difftime      (time_t time1, time_t time0);                        /* Computes the difference, in seconds, between time1 and time0. */
+time_t        mktime        (struct tm *timeptr);                                /* Converts a broken-down time in timeptr into a calendar time, normalizing its members. */
+time_t        time          (time_t *timer);                                     /* Returns the current calendar time, also storing it through timer if it is not a null pointer. */
+
+
+//|----------------------------------------------------------------------------
+//| Time Conversion (time.h)
+//|----------------------------------------------------------------------------
+
+char         *asctime       (const struct tm *timeptr);                          /* Converts a broken-down time in timeptr into a fixed-format string. */
+char         *ctime         (const time_t *timer);                               /* Converts a calendar time in timer into a fixed-format local-time string, equivalent to asctime(localtime(timer)). */
+struct tm    *gmtime        (const time_t *timer);                               /* Converts a calendar time in timer into broken-down time expressed as UTC. */
+struct tm    *localtime     (const time_t *timer);                               /* Converts a calendar time in timer into broken-down time expressed as local time. */
+size_t        strftime      (char *s, size_t maxsize, const char *format, const struct tm *timeptr); /* Formats the broken-down time timeptr into s according to format, writing at most maxsize characters. */
+
+
+//|----------------------------------------------------------------------------
+//| Constants (time.h)
+//|----------------------------------------------------------------------------
+
+NULL                                                                            /* Null pointer constant. */
+CLOCKS_PER_SEC                                                                  /* Number of clock ticks per second, for use with clock. */
+
+
+//|----------------------------------------------------------------------------
+//| Types (time.h)
+//|----------------------------------------------------------------------------
+
+size_t                                                                          /* Unsigned integer type for the result of the sizeof operator. */
+clock_t                                                                         /* Arithmetic type capable of representing processor time. */
+time_t                                                                          /* Arithmetic type capable of representing calendar time. */
+struct tm                                                                       /* Structure holding the components of a calendar time, broken down into its individual fields. */
+
+
+//|----------------------------------------------------------------------------
+//| struct tm Members (time.h)
+//|----------------------------------------------------------------------------
+
+tm_sec                                                                          /* Seconds after the minute (0-60, allowing for a leap second). */
+tm_min                                                                          /* Minutes after the hour (0-59). */
+tm_hour                                                                         /* Hours since midnight (0-23). */
+tm_mday                                                                         /* Day of the month (1-31). */
+tm_mon                                                                          /* Months since January (0-11). */
+tm_year                                                                         /* Years since 1900. */
+tm_wday                                                                         /* Days since Sunday (0-6). */
+tm_yday                                                                         /* Days since January 1 (0-365). */
+tm_isdst                                                                        /* Nonzero if Daylight Saving Time is in effect, zero if not, negative if unknown. */

@@ -1,0 +1,34 @@
+//|----------------------------------------------------------------------------
+//| Signal Handling (signal.h)
+//|----------------------------------------------------------------------------
+
+void        (*signal        (int sig, void (*func)(int)))(int);                  /* Sets a handler function for signal sig, returning the previous handler or SIG_ERR on failure. */
+int           raise         (int sig);                                           /* Sends signal sig to the executing program. */
+
+
+//|----------------------------------------------------------------------------
+//| Handler Constants (signal.h)
+//|----------------------------------------------------------------------------
+
+SIG_DFL                                                                         /* Requests default signal handling. */
+SIG_ERR                                                                         /* Return value of signal on error. */
+SIG_IGN                                                                         /* Requests that a signal be ignored. */
+
+
+//|----------------------------------------------------------------------------
+//| Signal Number Constants (signal.h)
+//|----------------------------------------------------------------------------
+
+SIGABRT                                                                         /* Abnormal termination, such as from abort. */
+SIGFPE                                                                          /* Erroneous arithmetic operation, such as division by zero. */
+SIGILL                                                                          /* Detection of an invalid function image, such as an illegal instruction. */
+SIGINT                                                                          /* Interactive attention signal, e.g. from the user. */
+SIGSEGV                                                                         /* Invalid access to storage. */
+SIGTERM                                                                         /* Termination request sent to the program. */
+
+
+//|----------------------------------------------------------------------------
+//| Types (signal.h)
+//|----------------------------------------------------------------------------
+
+sig_atomic_t                                                                    /* Integer type that can be accessed as an atomic entity even in the presence of asynchronous signals. */

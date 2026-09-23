@@ -1,0 +1,58 @@
+//|----------------------------------------------------------------------------
+//| String Duplication (string.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+char         *strdup        (const char *s);                                     /* Allocates and returns a duplicate of a string. */
+char         *strndup       (const char *s, size_t size);                        /* Allocates and returns a duplicate of at most size bytes of a string. */
+
+
+//|----------------------------------------------------------------------------
+//| Bounded String Length (string.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+size_t        strnlen       (const char *s, size_t maxlen);                      /* Returns the length of a string, up to a maximum. */
+
+
+//|----------------------------------------------------------------------------
+//| Copying with Termination Pointer (string.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+char         *stpcpy        (char *restrict dst, const char *restrict src);      /* Copies a string, returning a pointer to the terminating null of dst. */
+char         *stpncpy       (char *restrict dst, const char *restrict src, size_t n); /* Copies at most n bytes, returning a pointer into dst. */
+
+
+//|----------------------------------------------------------------------------
+//| Reentrant String Tokenizing (string.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+char         *strtok_r      (char *restrict s, const char *restrict sep, char **restrict lasts); /* Reentrant version of strtok. */
+
+
+//|----------------------------------------------------------------------------
+//| Locale-Specific Collation (string.h) [POSIX.1-2008]
+//|----------------------------------------------------------------------------
+
+int           strcoll_l     (const char *s1, const char *s2, locale_t loc);      /* Compares two strings using a given locale's collation. */
+size_t        strxfrm_l     (char *restrict s1, const char *restrict s2, size_t n, locale_t loc); /* Transforms a string for locale-aware comparison. */
+
+
+//|----------------------------------------------------------------------------
+//| Thread-Safe and Locale-Aware Error Messages (string.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+int           strerror_r    (int errnum, char *strerrbuf, size_t buflen);        /* Thread-safe retrieval of an error message string. */
+char         *strerror_l    (int errnum, locale_t loc);                          /* Returns an error message string formatted for a given locale. */
+
+
+//|----------------------------------------------------------------------------
+//| Signal Description (string.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+char         *strsignal     (int signum);                                        /* Returns a string describing a signal. */
+
+
+//|----------------------------------------------------------------------------
+//| Bounded Memory Copy (string.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+void         *memccpy       (void *restrict dst, const void *restrict src, int c, size_t n); /* Copies bytes until c is found or n bytes are copied. */

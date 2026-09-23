@@ -1,0 +1,13 @@
+//|----------------------------------------------------------------------------
+//| Signal Jump Types (setjmp.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+sigjmp_buf                                                                      /* Type capable of storing a calling environment including the signal mask. */
+
+
+//|----------------------------------------------------------------------------
+//| Signal Jump Functions (setjmp.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+int           sigsetjmp     (sigjmp_buf env, int savemask);                     /* Saves the calling environment; saves the signal mask if savemask is non-zero. */
+void          siglongjmp    (sigjmp_buf env, int val);                          /* Restores the environment saved by sigsetjmp, restoring the signal mask if it was saved. */

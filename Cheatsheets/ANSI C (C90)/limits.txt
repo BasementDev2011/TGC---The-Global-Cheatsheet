@@ -1,0 +1,26 @@
+//|----------------------------------------------------------------------------
+//| Character Limits (limits.h)
+//|----------------------------------------------------------------------------
+
+CHAR_BIT                                                                        /* Number of bits in a byte (char object). */
+CHAR_MIN                                                                        /* Minimum value of a char. */
+CHAR_MAX                                                                        /* Maximum value of a char. */
+SCHAR_MIN                                                                       /* Minimum value of a signed char. */
+SCHAR_MAX                                                                       /* Maximum value of a signed char. */
+UCHAR_MAX                                                                       /* Maximum value of an unsigned char. */
+MB_LEN_MAX                                                                      /* Maximum number of bytes in a multibyte character, for any supported locale. */
+
+
+//|----------------------------------------------------------------------------
+//| Integer Limits (limits.h)
+//|----------------------------------------------------------------------------
+
+SHRT_MIN                                                                        /* Minimum value of a short int. */
+SHRT_MAX                                                                        /* Maximum value of a short int. */
+USHRT_MAX                                                                       /* Maximum value of an unsigned short int. */
+INT_MIN                                                                         /* Minimum value of an int. */
+INT_MAX                                                                         /* Maximum value of an int. */
+UINT_MAX                                                                        /* Maximum value of an unsigned int. */
+LONG_MIN                                                                        /* Minimum value of a long int. */
+LONG_MAX                                                                        /* Maximum value of a long int. */
+ULONG_MAX                                                                       /* Maximum value of an unsigned long int. */

@@ -1,0 +1,235 @@
+//|----------------------------------------------------------------------------
+//| Signal Numbers (signal.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+SIGALRM                                                                         /* Alarm clock. */
+SIGCHLD                                                                         /* Child process terminated, stopped, or continued. */
+SIGCONT                                                                         /* Continue executing, if stopped. */
+SIGHUP                                                                          /* Hangup. */
+SIGKILL                                                                         /* Kill (cannot be caught or ignored). */
+SIGPIPE                                                                         /* Write on a pipe with no one to read it. */
+SIGQUIT                                                                         /* Terminal quit signal. */
+SIGSTOP                                                                         /* Stop executing (cannot be caught or ignored). */
+SIGTSTP                                                                         /* Terminal stop signal. */
+SIGTTIN                                                                         /* Background process attempting read from controlling terminal. */
+SIGTTOU                                                                         /* Background process attempting write to controlling terminal. */
+SIGURG                                                                          /* High bandwidth data is available at a socket. */
+SIGUSR1                                                                         /* User-defined signal 1. */
+SIGUSR2                                                                         /* User-defined signal 2. */
+
+
+//|----------------------------------------------------------------------------
+//| Signal Numbers (signal.h) [POSIX XSI]
+//|----------------------------------------------------------------------------
+
+SIGBUS                                                                          /* Access to an undefined portion of a memory object. */
+SIGPOLL                                                                         /* Pollable event. */
+SIGPROF                                                                         /* Profiling timer expired. */
+SIGSYS                                                                          /* Bad system call. */
+SIGTRAP                                                                         /* Trace/breakpoint trap. */
+SIGVTALRM                                                                       /* Virtual timer expired. */
+SIGWINCH                                                                        /* Window size change. */
+SIGXCPU                                                                         /* CPU time limit exceeded. */
+SIGXFSZ                                                                         /* File size limit exceeded. */
+
+
+//|----------------------------------------------------------------------------
+//| Real-Time Signal Numbers (signal.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+SIGRTMIN                                                                        /* Minimum real-time signal number. */
+SIGRTMAX                                                                        /* Maximum real-time signal number. */
+
+
+//|----------------------------------------------------------------------------
+//| sigaction Flags (signal.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+SA_NOCLDSTOP                                                                    /* Do not generate SIGCHLD when children stop or stopped children continue. */
+SA_NOCLDWAIT                                                                    /* Do not create zombie processes on child death. */
+SA_NODEFER                                                                      /* Do not mask the signal while executing the signal handler. */
+SA_ONSTACK                                                                      /* Execute signal handler on alternate signal stack. */
+SA_RESETHAND                                                                    /* Reset signal disposition to SIG_DFL on entry to signal handler. */
+SA_RESTART                                                                      /* Restart system calls interrupted by the signal. */
+SA_SIGINFO                                                                      /* Invoke signal handler with additional siginfo_t and ucontext_t arguments. */
+
+
+//|----------------------------------------------------------------------------
+//| Signal Mask Operations (signal.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+SIG_BLOCK                                                                       /* Block the signals in the set. */
+SIG_UNBLOCK                                                                     /* Unblock the signals in the set. */
+SIG_SETMASK                                                                     /* Set the signal mask to the set. */
+
+
+//|----------------------------------------------------------------------------
+//| Signal Hold Constant (signal.h) [POSIX XSI]
+//|----------------------------------------------------------------------------
+
+SIG_HOLD                                                                        /* Request that the signal be held. Used with sigset. */
+
+
+//|----------------------------------------------------------------------------
+//| Alternate Signal Stack Constants (signal.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+SS_ONSTACK                                                                      /* Process is currently executing on the alternate signal stack. */
+SS_DISABLE                                                                      /* The alternate signal stack is disabled. */
+MINSIGSTKSZ                                                                     /* Minimum size in bytes of an alternate signal stack. */
+SIGSTKSZ                                                                        /* Default size in bytes of an alternate signal stack. */
+
+
+//|----------------------------------------------------------------------------
+//| Signal Info Codes (signal.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+SI_USER                                                                         /* Signal sent by kill(). */
+SI_QUEUE                                                                        /* Signal sent by sigqueue(). */
+SI_TIMER                                                                        /* Signal generated by expiration of a timer. */
+SI_ASYNCIO                                                                      /* Signal generated by completion of an asynchronous I/O request. */
+SI_MESGQ                                                                        /* Signal generated by arrival of a message on an empty message queue. */
+
+
+//|----------------------------------------------------------------------------
+//| Async Notification Constants (signal.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+SIGEV_NONE                                                                      /* No asynchronous notification is delivered. */
+SIGEV_SIGNAL                                                                    /* A queued signal is generated when the event of interest occurs. */
+SIGEV_THREAD                                                                    /* A notification function is called in a new thread when the event of interest occurs. */
+
+
+//|----------------------------------------------------------------------------
+//| Types (signal.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+pid_t                                                                           /* Used for process IDs and process group IDs. */
+pthread_t                                                                       /* Used to identify a thread. */
+sigset_t                                                                        /* Represents a set of signals. */
+uid_t                                                                           /* Used for user IDs. */
+
+
+//|----------------------------------------------------------------------------
+//| Types (signal.h) [POSIX XSI]
+//|----------------------------------------------------------------------------
+
+mcontext_t                                                                      /* Represents machine-specific context. */
+ucontext_t                                                                      /* Represents user context including stack and signal mask. */
+
+
+//|----------------------------------------------------------------------------
+//| Structures (signal.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+struct sigaction                                                                 /* Describes the action to be taken on receipt of a signal. */
+struct sigevent                                                                  /* Describes asynchronous notification. */
+stack_t                                                                         /* Describes an alternate signal stack. */
+siginfo_t                                                                       /* Contains information about a received signal. */
+union sigval                                                                     /* Represents an integer or pointer signal value. */
+
+
+//|----------------------------------------------------------------------------
+//| struct sigaction Members (signal.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+sa_handler                                                                      /* Pointer to signal-catching function or SIG_DFL or SIG_IGN. */
+sa_sigaction                                                                    /* Pointer to signal-catching function taking signo, siginfo_t *, and void *. */
+sa_mask                                                                         /* Set of signals to be blocked during execution of the signal handler. */
+sa_flags                                                                        /* Flags modifying the behavior of the signal. */
+
+
+//|----------------------------------------------------------------------------
+//| struct sigevent Members (signal.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+sigev_notify                                                                    /* Notification type. */
+sigev_signo                                                                     /* Signal number. */
+sigev_value                                                                     /* Signal value. */
+sigev_notify_function                                                           /* Notification function called when SIGEV_THREAD. */
+sigev_notify_attributes                                                         /* Notification attributes used when SIGEV_THREAD. */
+
+
+//|----------------------------------------------------------------------------
+//| union sigval Members (signal.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+sival_int                                                                       /* Integer signal value. */
+sival_ptr                                                                       /* Pointer signal value. */
+
+
+//|----------------------------------------------------------------------------
+//| siginfo_t Members (signal.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+si_signo                                                                        /* Signal number. */
+si_code                                                                         /* Signal code. */
+si_errno                                                                        /* If non-zero, an errno value associated with this signal. */
+si_pid                                                                          /* Sending process ID. */
+si_uid                                                                          /* Real user ID of sending process. */
+si_addr                                                                         /* Address of faulting instruction. */
+si_status                                                                       /* Exit value or signal. */
+si_value                                                                        /* Signal value. */
+
+
+//|----------------------------------------------------------------------------
+//| Signal Set Functions (signal.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+int           sigaddset     (sigset_t *set, int signo);                         /* Adds a signal to a signal set. */
+int           sigdelset     (sigset_t *set, int signo);                         /* Deletes a signal from a signal set. */
+int           sigemptyset   (sigset_t *set);                                    /* Initializes a signal set to the empty set. */
+int           sigfillset    (sigset_t *set);                                    /* Initializes a signal set to contain all signals. */
+int           sigismember   (const sigset_t *set, int signo);                   /* Tests whether a signal is a member of a signal set. */
+
+
+//|----------------------------------------------------------------------------
+//| Signal Control Functions (signal.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+int           kill          (pid_t pid, int sig);                               /* Sends a signal to a process or group of processes. */
+int           sigaction     (int sig, const struct sigaction *restrict act, struct sigaction *restrict oact); /* Examines and changes the action associated with a signal. */
+int           sigaltstack   (const stack_t *restrict ss, stack_t *restrict oss); /* Sets or gets the alternate signal stack for the calling process. */
+int           sigpending    (sigset_t *set);                                    /* Retrieves the set of signals pending for the calling thread. */
+int           sigprocmask   (int how, const sigset_t *restrict set, sigset_t *restrict oset); /* Examines and changes the set of blocked signals. */
+int           sigsuspend    (const sigset_t *sigmask);                          /* Replaces the signal mask and suspends the calling thread until a signal is received. */
+int           sigwait       (const sigset_t *restrict set, int *restrict sig);  /* Waits for a signal from a specified set to become pending. */
+
+
+//|----------------------------------------------------------------------------
+//| Real-Time Signal Functions (signal.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+int           sigqueue      (pid_t pid, int signo, const union sigval value);   /* Queues a signal and data to a process. */
+int           sigtimedwait  (const sigset_t *restrict set, siginfo_t *restrict info, const struct timespec *restrict timeout); /* Waits for a queued signal, with a timeout. */
+int           sigwaitinfo   (const sigset_t *restrict set, siginfo_t *restrict info); /* Waits for a queued signal. */
+
+
+//|----------------------------------------------------------------------------
+//| Thread Signal Functions (signal.h) [POSIX]
+//|----------------------------------------------------------------------------
+
+int           pthread_kill      (pthread_t thread, int sig);                    /* Sends a signal to a thread. */
+int           pthread_sigmask   (int how, const sigset_t *restrict set, sigset_t *restrict oset); /* Examines and changes the blocked signals for the calling thread. */
+
+
+//|----------------------------------------------------------------------------
+//| XSI Signal Functions (signal.h) [POSIX XSI]
+//|----------------------------------------------------------------------------
+
+int           killpg        (pid_t pgrp, int sig);                              /* Sends a signal to a process group. */
+void          psiginfo      (const siginfo_t *pinfo, const char *message);      /* Writes a message to standard error describing the signal in pinfo. */
+void          psignal       (int signum, const char *message);                  /* Writes a message to standard error describing the given signal. */
+
+
+//|----------------------------------------------------------------------------
+//| Obsolescent Signal Functions (signal.h) [POSIX XSI][obsolescent]
+//|----------------------------------------------------------------------------
+
+void        (*bsd_signal    (int sig, void (*func)(int)))(int);                 /* Simplified signal facility. Superseded by sigaction. */
+int           sighold       (int sig);                                           /* Adds a signal to the calling process signal mask. Superseded by sigprocmask. */
+int           sigignore     (int sig);                                           /* Sets the disposition of a signal to SIG_IGN. Superseded by sigaction. */
+int           siginterrupt  (int sig, int flag);                                 /* Allows signals to interrupt functions. Superseded by sigaction with SA_RESTART. */
+int           sigpause      (int sig);                                           /* Removes a signal from the signal mask and suspends the process. Superseded by sigsuspend. */
+int           sigrelse      (int sig);                                           /* Removes a signal from the calling process signal mask. Superseded by sigprocmask. */
+void        (*sigset        (int sig, void (*disp)(int)))(int);                 /* Modifies signal dispositions. Superseded by sigaction. */

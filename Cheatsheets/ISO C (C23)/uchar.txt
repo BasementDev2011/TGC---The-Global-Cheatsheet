@@ -1,0 +1,36 @@
+//|----------------------------------------------------------------------------
+//| UTF-16 Conversion (uchar.h)
+//|----------------------------------------------------------------------------
+
+size_t        mbrtoc16      (char16_t *restrict pc16, const char *restrict s, size_t n, mbstate_t *restrict ps); /* Converts a multibyte character to a 16-bit (UTF-16) character. */
+size_t        c16rtomb      (char *restrict s, char16_t c16, mbstate_t *restrict ps);                              /* Converts a 16-bit (UTF-16) character to a multibyte character. */
+
+//|----------------------------------------------------------------------------
+//| UTF-32 Conversion (uchar.h)
+//|----------------------------------------------------------------------------
+
+size_t        mbrtoc32      (char32_t *restrict pc32, const char *restrict s, size_t n, mbstate_t *restrict ps); /* Converts a multibyte character to a 32-bit (UTF-32) character. */
+size_t        c32rtomb      (char *restrict s, char32_t c32, mbstate_t *restrict ps);                              /* Converts a 32-bit (UTF-32) character to a multibyte character. */
+
+//|----------------------------------------------------------------------------
+//| Types (uchar.h)
+//|----------------------------------------------------------------------------
+
+size_t                                                                            /* Unsigned integer type, result of sizeof; the return type of all functions here. */
+mbstate_t                                                                         /* Represents multibyte conversion state, as described for <wchar.h>. */
+char16_t                                                                          /* Unsigned integer type for a 16-bit character (UTF-16 code unit). */
+char32_t                                                                          /* Unsigned integer type for a 32-bit character (UTF-32 code unit). */
+
+//|----------------------------------------------------------------------------
+//| Notes (uchar.h)
+//|----------------------------------------------------------------------------
+
+/* Return value sentinels for all four functions (in addition to ordinary     */
+/* byte counts):                                                              */
+/*   0            - the null character was converted.                        */
+/*   (size_t)(-1) - encoding error; errno is set to EILSEQ.                   */
+/*   (size_t)(-2) - the next n bytes form an incomplete, but so-far-valid,    */
+/*                  multibyte character.                                     */
+/*   (size_t)(-3) - (mbrtoc16/mbrtoc32 only) a trailing surrogate was stored  */
+/*                  without consuming another input byte, completing a       */
+/*                  surrogate pair for a character outside the BMP.          */

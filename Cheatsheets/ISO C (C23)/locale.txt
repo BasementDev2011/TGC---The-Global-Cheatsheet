@@ -1,0 +1,70 @@
+//|----------------------------------------------------------------------------
+//| Locale Functions (locale.h)
+//|----------------------------------------------------------------------------
+
+char         *setlocale     (int category, const char *locale);                  /* Sets or queries the program's current locale. */
+struct lconv *localeconv    (void);                                              /* Returns formatting conventions for the current locale. */
+
+
+//|----------------------------------------------------------------------------
+//| Locale Categories (locale.h)
+//|----------------------------------------------------------------------------
+
+LC_ALL                                                                             /* Selects the entire locale. */
+LC_COLLATE                                                                         /* Affects string collation functions (e.g. strcoll, strxfrm). */
+LC_CTYPE                                                                           /* Affects character classification and conversion functions. */
+LC_MONETARY                                                                        /* Affects monetary formatting information (via localeconv). */
+LC_NUMERIC                                                                         /* Affects the decimal-point character and numeric formatting. */
+LC_TIME                                                                            /* Affects date and time formatting (e.g. strftime). */
+
+
+//|----------------------------------------------------------------------------
+//| Types (locale.h)
+//|----------------------------------------------------------------------------
+
+struct lconv                                                                       /* Structure holding numeric and monetary formatting conventions for the current locale. */
+
+
+//|----------------------------------------------------------------------------
+//| struct lconv Members (locale.h)
+//|----------------------------------------------------------------------------
+
+char         *decimal_point;                                                      /* Decimal-point character for non-monetary quantities. */
+char         *thousands_sep;                                                      /* Thousands separator for non-monetary quantities. */
+char         *grouping;                                                           /* Digit grouping pattern for non-monetary quantities. */
+char         *int_curr_symbol;                                                    /* International currency symbol. */
+char         *currency_symbol;                                                    /* Local currency symbol. */
+char         *mon_decimal_point;                                                  /* Decimal-point character for monetary quantities. */
+char         *mon_thousands_sep;                                                  /* Thousands separator for monetary quantities. */
+char         *mon_grouping;                                                       /* Digit grouping pattern for monetary quantities. */
+char         *positive_sign;                                                      /* Sign string for nonnegative monetary quantities. */
+char         *negative_sign;                                                      /* Sign string for negative monetary quantities. */
+char          int_frac_digits;                                                    /* Digits after the decimal point for internationally formatted monetary quantities. */
+char          frac_digits;                                                        /* Digits after the decimal point for locally formatted monetary quantities. */
+char          p_cs_precedes;                                                      /* Whether the currency symbol precedes a nonnegative monetary value. */
+char          p_sep_by_space;                                                     /* Whether a space separates the currency symbol from a nonnegative value. */
+char          n_cs_precedes;                                                      /* Whether the currency symbol precedes a negative monetary value. */
+char          n_sep_by_space;                                                     /* Whether a space separates the currency symbol from a negative value. */
+char          p_sign_posn;                                                        /* Position of the sign for nonnegative monetary quantities. */
+char          n_sign_posn;                                                        /* Position of the sign for negative monetary quantities. */
+char          int_p_cs_precedes;                                                  /* C99+. Whether the international currency symbol precedes a nonnegative monetary value. */
+char          int_n_cs_precedes;                                                  /* C99+. Whether the international currency symbol precedes a negative monetary value. */
+char          int_p_sep_by_space;                                                 /* C99+. Whether a space separates the international currency symbol from a nonnegative value. */
+char          int_n_sep_by_space;                                                 /* C99+. Whether a space separates the international currency symbol from a negative value. */
+char          int_p_sign_posn;                                                    /* C99+. Position of the sign for internationally formatted nonnegative monetary quantities. */
+char          int_n_sign_posn;                                                    /* C99+. Position of the sign for internationally formatted negative monetary quantities. */
+
+
+//|----------------------------------------------------------------------------
+//| Constants (locale.h)
+//|----------------------------------------------------------------------------
+
+NULL                                                                               /* Null pointer constant. */
+
+
+//|----------------------------------------------------------------------------
+//| Notes (locale.h)
+//|----------------------------------------------------------------------------
+/* POSIX extends locale handling with LC_MESSAGES and the locale_t object
+   API (newlocale, uselocale, freelocale, duplocale). These are NOT part
+   of ISO C and are intentionally excluded from this cheatsheet. */
